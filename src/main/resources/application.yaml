@@ -2,4 +2,4 @@ spring:
   data:
     cassandra:
       keyspace-name: scm
-      contact-points: 10.0.16.133
+      contact-points: localhost

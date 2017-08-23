@@ -1,0 +1,14 @@
+h3 Total: {{size}}
+table.table.table-hover
+	thead: tr
+		th ID
+		th Name
+		th Address
+		th Zip
+	tbody
+		tr(*ngFor="let hotel of hotels")
+			td {{hotel.id}}
+			td {{hotel.name}}
+			td {{hotel.address}}
+			td {{hotel.zip}}
+img(src="image/EH_logo-01.svg")
