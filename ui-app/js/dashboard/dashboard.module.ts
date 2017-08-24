@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-
+import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+
+const ROUTES: Routes = [
+	{ path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' }}
+];
 
 @NgModule({
 	imports: [
 		SharedModule,
-		ReactiveFormsModule
+		RouterModule.forRoot(ROUTES)
 	],
 	exports: [
 		DashboardComponent
