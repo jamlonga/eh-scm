@@ -73,8 +73,9 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__("./ui-app/js/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_module__ = __webpack_require__("./ui-app/js/dashboard/dashboard.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__("./ui-app/js/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_module__ = __webpack_require__("./ui-app/js/dashboard/dashboard.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -87,7 +88,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // import { RebootUIModule } from 'reboot-ui2';
-// import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 var AppModule = (function () {
@@ -102,15 +103,15 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* ReactiveFormsModule */],
-            // NgbModule.forRoot(),
+            __WEBPACK_IMPORTED_MODULE_5__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             // RebootUIModule.forRoot(),
-            __WEBPACK_IMPORTED_MODULE_6__dashboard_dashboard_module__["a" /* DashboardModule */]
+            __WEBPACK_IMPORTED_MODULE_7__dashboard_dashboard_module__["a" /* DashboardModule */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]
+            __WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* AppComponent */]]
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
@@ -121,7 +122,7 @@ AppModule = __decorate([
 /***/ "./ui-app/js/dashboard/dashboard.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<h3>Total: {{size}}</h3><table class=\"table table-hover\"><thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Zip</th></tr></thead><tbody><tr *ngFor=\"let hotel of hotels\"><td>{{hotel.id}}</td><td>{{hotel.name}}</td><td>{{hotel.address}}</td><td>{{hotel.zip}}</td></tr></tbody></table><img src=\"image/EH_logo-01.svg\"/>"
+module.exports = "<h3 class=\"text-primary\">Total: {{size}}</h3><table class=\"table table-hover\"><thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Zip</th></tr></thead><tbody><tr *ngFor=\"let hotel of hotels\"><td>{{hotel.id}}</td><td>{{hotel.name}}</td><td>{{hotel.address}}</td><td>{{hotel.zip}}</td></tr></tbody></table><img src=\"image/EH_logo-01.svg\"/>"
 
 /***/ }),
 
