@@ -9,13 +9,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
 import { DashboardModule } from './dashboard/dashboard.module';
 import { HotelModule } from './hotel/hotel.module';
 
-// const ROUTES: Routes = [
-// 	{ path: '', component: DashboardComponent, data: { title: 'Dashboard' }}
-// ];
+const ROUTES: Routes = [
+	{ path: '', component: DashboardComponent, data: { title: 'Dashboard' }},
+	{ path: 'not-found', component: PageNotFoundComponent },
+	{ path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
 	imports: [
@@ -26,12 +29,14 @@ import { HotelModule } from './hotel/hotel.module';
 		// NgbModule.forRoot(),
 		// RebootUIModule.forRoot(),
 		SharedModule,
+		RouterModule.forRoot(ROUTES),
 
 		DashboardModule,
 		HotelModule
 	],
 	declarations: [
-		AppComponent
+		AppComponent,
+		PageNotFoundComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent]

@@ -116,7 +116,7 @@ module.exports = {
       },
       {
         "test": /\.pug$/,
-        "loader": ["raw-loader", "pug-html-loader"]
+        "loader": ["raw-loader", "pug-html-loader?doctype=html"]
       },
       {
         "test": /\.less$/,

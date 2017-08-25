@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { HotelService } from '../shared/services';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { slideInDown } from '../shared/animations/slide';
 
 @Component({
 	selector: 'hotel-index',
 	templateUrl: './hotel-index.component.pug',
+	animations: [slideInDown]
 })
 export class HotelIndexComponent implements OnInit {
 	title: string;
 	size: number;
 	hotels: any;
-	id: number;
+	queryParams: Params;
 
 	constructor(
 		private hotelService: HotelService,
@@ -19,7 +21,7 @@ export class HotelIndexComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.title = this.route.snapshot.data.title;
-		this.id = this.route.snapshot.params.id;
+		this.queryParams = this.route.snapshot.queryParams;
 		this.hotelService.get()
 		.subscribe((response: any[]) => {
 			this.hotels = response;

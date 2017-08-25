@@ -1,15 +1,16 @@
 h2 {{title}}
-h4 ID: {{id}}
-h3.text-primary Total: {{size}}
-table.table.table-hover
-	thead: tr
-		th ID
-		th Name
-		th Address
-		th Zip
-	tbody
-		tr(*ngFor="let hotel of hotels")
-			td {{hotel.id}}
-			td {{hotel.name}}
-			td {{hotel.address}}
-			td {{hotel.zip}}
+pre {{queryParams | json}}
+div(*ngIf="size", @slideInDown)
+	h3.text-primary Total: {{size}}
+	table.table.table-hover
+		thead: tr
+			th ID
+			th Name
+			th Address
+			th Zip
+		tbody
+			tr(*ngFor="let hotel of hotels")
+				td {{hotel.id}}
+				td {{hotel.name}}
+				td {{hotel.address}}
+				td {{hotel.zip}}
