@@ -11,14 +11,15 @@ const ROUTES: Routes = [
 	{
 		path: 'hotel',
 		component: HotelComponent,
-		data: { title: 'Hotel' },
+		data: { breadcrumb: 'Hotel' },
 		canActivate: [RounterCanActivateService],
+		canActivateChild: [RounterCanActivateService],
 		children: [
-			{ path: '', component: HotelIndexComponent, data: { title: 'Hotel index' }},
+			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel index' }},
 			{
 				path: ':id',
 				component: HotelViewComponent,
-				data: { title: 'Hotel index' }
+				data: { breadcrumb: 'Hotel view' }
 			}
 		]
 	},

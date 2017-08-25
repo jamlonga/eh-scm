@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
 	selector: 'app',
 	template: `
+		<scm-breadcrumb></scm-breadcrumb>
 		<img src="image/EH_logo-01.svg" width="150px">
 		<ul class="nav nav-pills">
 			<li><a routerLink="/" routerLinkActive="active">Home</a></li>

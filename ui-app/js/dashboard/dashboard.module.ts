@@ -3,8 +3,16 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 
+import { RounterCanActivateService } from '../shared/services/router-can-activate.service'
+
 const ROUTES: Routes = [
-	{ path: 'dashboard', component: DashboardComponent, data: { title: 'Dashboard' }}
+	{
+		path: 'dashboard',
+		component: DashboardComponent,
+		data: { title: 'Dashboard' },
+		canActivate: [RounterCanActivateService],
+		canActivateChild: [RounterCanActivateService],
+	}
 ];
 
 @NgModule({

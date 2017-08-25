@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // import { RebootUIModule } from 'reboot-ui2';
 import { SharedServicesModule } from './services/shared-services.module';
+import { SharedComponentsModule } from './components/shared-components.module';
 
 @NgModule({
 	declarations: [],
@@ -13,7 +14,8 @@ import { SharedServicesModule } from './services/shared-services.module';
 		NgbModule,
 		RouterModule,
 		// RebootUIModule,
-		SharedServicesModule
+		SharedServicesModule,
+		SharedComponentsModule
 	],
 	providers: []
 })
