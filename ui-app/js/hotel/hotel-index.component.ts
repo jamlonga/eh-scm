@@ -22,7 +22,7 @@ export class HotelIndexComponent implements OnInit {
 	ngOnInit(): void {
 		this.title = this.route.snapshot.data.title;
 		this.queryParams = this.route.snapshot.queryParams;
-		this.hotelService.get()
+		this.hotelService.list()
 		.subscribe((response: any[]) => {
 			this.hotels = response;
 			this.size = response.length;

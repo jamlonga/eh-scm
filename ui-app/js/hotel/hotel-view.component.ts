@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class HotelViewComponent implements OnInit {
 	title: string;
 	id: number;
+	model: {};
 
 	constructor(
 		private route: ActivatedRoute
@@ -16,5 +17,6 @@ export class HotelViewComponent implements OnInit {
 	ngOnInit(): void {
 		this.title = this.route.snapshot.data.title;
 		this.id = this.route.snapshot.params.id;
+		this.model = this.route.snapshot.data.model;
 	}
 }

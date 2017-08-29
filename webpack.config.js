@@ -124,6 +124,10 @@ module.exports = {
         "loader": ExtractTextPlugin.extract("css-loader!less-loader?{'globalVars':{'brand-primary':'#EE352A'}}")
       },
       {
+        "test": /\.component\.less$/,
+        "loader": ["raw-loader", "less-loader?{'globalVars':{'brand-primary':'#EE352A'}}"]
+      },
+      {
         "test": /\.ts$/,
         "loader": "@ngtools/webpack"
       }

@@ -4,6 +4,7 @@ import { HotelIndexComponent } from './hotel-index.component'
 import { HotelViewComponent } from './hotel-view.component'
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
+import { HotelResolveService } from './hotel-resolve.service';
 
 import { RounterCanActivateService } from '../shared/services/router-can-activate.service'
 
@@ -11,18 +12,21 @@ const ROUTES: Routes = [
 	{
 		path: 'hotel',
 		component: HotelComponent,
-		data: { breadcrumb: 'Hotel' },
+		data: { breadcrumb: 'Hotel', title: 'Hotel' },
 		canActivate: [RounterCanActivateService],
 		canActivateChild: [RounterCanActivateService],
 		children: [
-			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel index' }},
+			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel index', title: 'Hotel index' }},
 			{
 				path: ':id',
 				component: HotelViewComponent,
-				data: { breadcrumb: 'Hotel view' }
+				data: { title: 'Hotel view' },
+				resolve: {
+					model: HotelResolveService
+				}
 			}
 		]
-	},
+	}
 ];
 @NgModule({
 	imports: [
@@ -38,7 +42,8 @@ const ROUTES: Routes = [
 		HotelViewComponent
 	],
 	providers: [
-		RounterCanActivateService
+		RounterCanActivateService,
+		HotelResolveService
 	]
 })
 export class HotelModule {}

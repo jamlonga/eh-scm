@@ -1,0 +1,73 @@
+@import "~reboot-ui/less/variables.less";
+
+:host {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 109;
+	width: 100%;
+	display: block;
+	height: @navbar-height;
+	// background: darken(@brand-primary, 3%);
+	background: #fff;
+	padding-left: ((@grid-gutter-width / 2) + @sidebar-maximized-width);
+	// color: #fff;
+	// color: @text-muted;
+	border-bottom: 1px solid @default-border-color;
+	line-height: @navbar-height;
+	// box-shadow: 0 -8px 8px 8px rgba(0,0,0,0.2);
+	transition: padding @sidebar-transition;
+
+	.breadcrumb {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 0.5em;
+	}
+
+	.user-menu {
+		.dropdown-toggle {
+			padding: 0 1em;
+			display: block;
+			color: @text-color;
+			transition: all 0.2s;
+			&:hover,
+			&:focus {
+				background: hsl(@brand-info-hue, 10%, 90%);
+				text-decoration: none;
+			}
+		}
+
+		.user-photo {
+			color: #fff;
+			display: inline-block;
+			width: 2.5em;
+			height: 2.5em;
+			line-height: 1;
+			text-align: center;
+			background: hsl(@brand-info-hue, 10%, 70%);
+			border-radius: 2.5em;
+			margin-right: 0.5em;
+			overflow: hidden;
+			vertical-align: middle;
+
+			> img {
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+			}
+		}
+		.dropdown-menu {
+			width: 100%;
+		}
+	}
+
+	h1 {
+		font-weight: 300;
+		margin-left: 20px;
+	}
+
+}
+
+body.rb-sidebar-left-minimized :host {
+	padding-left: ((@grid-gutter-width / 2) + @sidebar-minimized-width);
+}

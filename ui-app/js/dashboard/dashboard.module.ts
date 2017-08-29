@@ -9,7 +9,7 @@ const ROUTES: Routes = [
 	{
 		path: 'dashboard',
 		component: DashboardComponent,
-		data: { title: 'Dashboard' },
+		data: { breadcrumb: 'Dashboard', title: 'Dashboard' },
 		canActivate: [RounterCanActivateService],
 		canActivateChild: [RounterCanActivateService],
 	}
