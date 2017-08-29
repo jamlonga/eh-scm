@@ -7,8 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("api/scm/v1/hotels")
@@ -18,24 +16,28 @@ public class HotelController {
 
     @Autowired
     public HotelController(HotelService hotelService) {
-        this.hotelService = hotelService;
+      this.hotelService = hotelService;
     }
 
+
     @GetMapping(path = "")
-    public List<Hotel> getAll() {
-        return this.hotelService.findAll();
+    public Iterable<Hotel> getAll() {
+        return hotelService.findAllWithSortById();
     }
+
     @GetMapping(path = "/{id}")
-    public Hotel get(@PathVariable("id") UUID uuid) {
-        return this.hotelService.findOne(uuid);
+    public Hotel get(@PathVariable("id") Long id) {
+        return hotelService.findById(id);
     }
 
     @PostMapping
     public ResponseEntity<Hotel> save(@RequestBody Hotel hotel) {
-        Hotel savedHotel = this.hotelService.save(hotel);
-        return new ResponseEntity<>(savedHotel, HttpStatus.CREATED);
+        Hotel savedHotel = hotelService.save(hotel);
+
+      return new ResponseEntity<>(savedHotel, HttpStatus.CREATED);
     }
 
+    /*
     @PutMapping
     public ResponseEntity<Hotel> update(@RequestBody Hotel hotel) {
         Hotel savedHotel = this.hotelService.update(hotel);
@@ -52,4 +54,5 @@ public class HotelController {
     public List<Hotel> findHotelsInState(@PathVariable("state") String state) {
         return this.hotelService.findHotelsInState(state);
     }
+    */
 }

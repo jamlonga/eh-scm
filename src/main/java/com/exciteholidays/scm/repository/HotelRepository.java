@@ -1,15 +1,13 @@
 package com.exciteholidays.scm.repository;
 
 import com.exciteholidays.scm.domain.Hotel;
+import org.springframework.data.cassandra.repository.CassandraRepository;
+import org.springframework.data.cassandra.repository.Query;
 
-import java.util.List;
-import java.util.UUID;
+public interface HotelRepository extends CassandraRepository<Hotel> {
+  @Query("Select * from hotel where name = ?0 allow filtering")
+  public Hotel findByName(String name);
 
-public interface HotelRepository {
-    Hotel save(Hotel hotel);
-    Hotel update(Hotel hotel);
-    Hotel findOne(UUID hotelId);
-    void delete(UUID hotelId);
-    List<Hotel> findByState(String state);
-    List<Hotel> findAll();
+  @Query("Select * from hotel_sort_by_id limit 15")
+  public Iterable<Hotel> sortById();
 }

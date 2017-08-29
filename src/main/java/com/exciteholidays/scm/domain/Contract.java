@@ -1,52 +1,47 @@
 package com.exciteholidays.scm.domain;
+
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
+
 import java.io.Serializable;
 import java.util.Date;
 
-@Table("hotel")
-public class Hotel implements Serializable {
+@Table("contract")
+public class Contract implements Serializable {
 
   private static final long serialVersionUID = 1L;
-
 
   @PrimaryKeyColumn(
     name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
   private Long id;
 
   @PrimaryKeyColumn(
-    name = "name",
+    name = "hotel_id",
     ordinal = 0,
     type = PrimaryKeyType.CLUSTERED,
     ordering = Ordering.ASCENDING)
-  private String name;
+  private Long hotelId;
 
-  @Column
-  private String address;
+  @Column(value="begin_stay_date")
+  private Date beginStayDate;
 
-  @Column(value="post_code")
-  private String postCode;
-
-  @Column(value="country_id")
-  private Integer countryId;
+  @Column(value="end_stay_date")
+  private Date endStayDate;
 
   @Column(value="date_created")
-  private Date dateCreated ;
+  private Date dateCreated;
 
   @Column(value="last_updated")
-  private Date lastUpdated ;
+  private Date lastUpdated;
 
-  @Column (value = "order_enable")
-  private Boolean orderEnable ;
-
-  public Hotel() {
+  public Contract() {
   }
 
-  public Hotel(String name) {
-    this.name = name;
+  public static long getSerialVersionUID() {
+    return serialVersionUID;
   }
 
   public Long getId() {
@@ -57,37 +52,28 @@ public class Hotel implements Serializable {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public Long getHotelId() {
+    return hotelId;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setHotelId(Long hotelId) {
+    this.hotelId = hotelId;
   }
 
-
-  public String getAddress() {
-    return address;
+  public Date getBeginStayDate() {
+    return beginStayDate;
   }
 
-  public void setAddress(String address) {
-    this.address = address;
+  public void setBeginStayDate(Date beginStayDate) {
+    this.beginStayDate = beginStayDate;
   }
 
-  public String getPostCode() {
-    return postCode;
+  public Date getEndStayDate() {
+    return endStayDate;
   }
 
-  public void setPostCode(String postCode) {
-    this.postCode = postCode;
-  }
-
-  public Integer getCountryId() {
-    return countryId;
-  }
-
-  public void setCountryId(Integer countryId) {
-    this.countryId = countryId;
+  public void setEndStayDate(Date endStayDate) {
+    this.endStayDate = endStayDate;
   }
 
   public Date getDateCreated() {
@@ -104,13 +90,5 @@ public class Hotel implements Serializable {
 
   public void setLastUpdated(Date lastUpdated) {
     this.lastUpdated = lastUpdated;
-  }
-
-  public Boolean getOrderEnable() {
-    return orderEnable;
-  }
-
-  public void setOrderEnable(Boolean orderEnable) {
-    this.orderEnable = orderEnable;
   }
 }

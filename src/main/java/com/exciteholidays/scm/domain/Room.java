@@ -1,52 +1,43 @@
 package com.exciteholidays.scm.domain;
+
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
 import org.springframework.data.cassandra.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.mapping.Table;
+
 import java.io.Serializable;
 import java.util.Date;
 
-@Table("hotel")
-public class Hotel implements Serializable {
+@Table("room")
+public class Room implements Serializable {
 
   private static final long serialVersionUID = 1L;
-
 
   @PrimaryKeyColumn(
     name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
   private Long id;
 
   @PrimaryKeyColumn(
-    name = "name",
+    name = "hotel_id",
     ordinal = 0,
     type = PrimaryKeyType.CLUSTERED,
     ordering = Ordering.ASCENDING)
-  private String name;
+  private Long hotelId;
 
-  @Column
-  private String address;
+  @Column(value="room_type_id")
+  private Integer roomTypeId;
 
-  @Column(value="post_code")
-  private String postCode;
-
-  @Column(value="country_id")
-  private Integer countryId;
+  @Column(value="room_name")
+  private String roomName;
 
   @Column(value="date_created")
-  private Date dateCreated ;
+  private Date dateCreated;
 
   @Column(value="last_updated")
-  private Date lastUpdated ;
+  private Date lastUpdated;
 
-  @Column (value = "order_enable")
-  private Boolean orderEnable ;
-
-  public Hotel() {
-  }
-
-  public Hotel(String name) {
-    this.name = name;
+  public Room() {
   }
 
   public Long getId() {
@@ -57,37 +48,28 @@ public class Hotel implements Serializable {
     this.id = id;
   }
 
-  public String getName() {
-    return name;
+  public Long getHotelId() {
+    return hotelId;
   }
 
-  public void setName(String name) {
-    this.name = name;
+  public void setHotelId(Long hotelId) {
+    this.hotelId = hotelId;
   }
 
-
-  public String getAddress() {
-    return address;
+  public Integer getRoomTypeId() {
+    return roomTypeId;
   }
 
-  public void setAddress(String address) {
-    this.address = address;
+  public void setRoomTypeId(Integer roomTypeId) {
+    this.roomTypeId = roomTypeId;
   }
 
-  public String getPostCode() {
-    return postCode;
+  public String getRoomName() {
+    return roomName;
   }
 
-  public void setPostCode(String postCode) {
-    this.postCode = postCode;
-  }
-
-  public Integer getCountryId() {
-    return countryId;
-  }
-
-  public void setCountryId(Integer countryId) {
-    this.countryId = countryId;
+  public void setRoomName(String roomName) {
+    this.roomName = roomName;
   }
 
   public Date getDateCreated() {
@@ -104,13 +86,5 @@ public class Hotel implements Serializable {
 
   public void setLastUpdated(Date lastUpdated) {
     this.lastUpdated = lastUpdated;
-  }
-
-  public Boolean getOrderEnable() {
-    return orderEnable;
-  }
-
-  public void setOrderEnable(Boolean orderEnable) {
-    this.orderEnable = orderEnable;
   }
 }
