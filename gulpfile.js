@@ -75,7 +75,8 @@ gulp.task('serve', [
 		.pipe(plumber())
 		.pipe(webpack(config))
 		.pipe(gulp.dest(DEST_PATH));
-	watch('./src/main/resources/public/**/*.*', reload);
+	// watch('./src/main/resources/public/**/*.*', reload);
+	watch('./build/resources/main/public/**/*.*', reload);
 });
 
 gulp.task('default', ['build']);

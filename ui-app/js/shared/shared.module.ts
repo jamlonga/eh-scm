@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -10,8 +11,9 @@ import { SharedServicesModule } from './services/shared-services.module';
 	exports: [
 		CommonModule,
 		NgbModule,
+		RouterModule,
 		// RebootUIModule,
-		SharedServicesModule
+		SharedServicesModule,
 	],
 	providers: []
 })

@@ -1,0 +1,15 @@
+//- scm-breadcrumb
+ul.breadcrumb(*ngIf="breadcrumbs && breadcrumbs.length")
+	li(*ngFor="let breadcrumb of breadcrumbs; let last = last", [class.active]="last")
+		a([routerLink]="breadcrumb.url", [queryParams]="breadcrumb.queryParams") {{breadcrumb.label}}
+ul.rb-navbar-right
+	li.user-menu(ngbDropdown)
+		a.rb-navbar-menu(ngbDropdownToggle)
+			span.user-photo: img(src="/image/logo-mini_resize.png")
+			span.hidden-xs test@exciteholidays.com
+			span.caret
+		ul.dropdown-menu.dropdown-menu-right
+			li
+				a(href="logout", target="_self")
+					i.m-r-5.ed-icon-power-off
+					span Logout

@@ -1,0 +1,25 @@
+//- #rb-sidebar-left
+a.rb-brand(href="main", target="_self")
+	img.rb-brand-logo(src="/image/logotop_resize.png", alt="")
+	img.rb-brand-logo-mini(src="/image/logo-mini_resize.png", alt="")
+.rb-sidebar-menu-container(rb-sidebar-left)
+	ul.rb-sidebar-menu
+		li.rb-sidebar-label MENU
+		li.rb-sidebar-menu-item
+			a(routerLink="/")
+				span Home
+		li.rb-sidebar-menu-item
+			a(routerLink="/hotel", [queryParams]="{ page: 1, size: 15 }")
+				span Hotel
+		li.rb-sidebar-menu-item
+			a(routerLink="/hotel/78a9f2d0-de6d-4bd7-9c98-d207a8e13f8b")
+				span View hotel
+		li.rb-sidebar-menu-item
+			a(routerLink="/dashboard")
+				span Dashboard
+		li.rb-sidebar-menu-item
+			a(routerLink="/not-create-this-page-yet")
+				span No page
+
+a(rb-sidebar-toggler).rb-sidebar-toggle
+	span <

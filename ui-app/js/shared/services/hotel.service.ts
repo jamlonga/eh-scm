@@ -6,8 +6,14 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class HotelService {
 	constructor(private http: Http) {}
-	get(): Observable<{}> {
+	list(): Observable<{}> {
 		return this.http.get('/api/scm/v1/hotels')
+		.catch((r) => Observable.throw(r.json()))
+		.map((r) => r.json());
+	}
+
+	get(id: string): Observable<{}> {
+		return this.http.get(`api/scm/v1/hotels/${id}`)
 		.catch((r) => Observable.throw(r.json()))
 		.map((r) => r.json());
 	}
