@@ -101,7 +101,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// import { RebootUIModule } from 'reboot-ui2';
+// import { RebootUIModule } from '../../node_modules/reboot-ui/js2';
 
 
 
@@ -483,7 +483,7 @@ var ROUTES = [
         children: [
             { path: '', component: __WEBPACK_IMPORTED_MODULE_2__hotel_index_component__["a" /* HotelIndexComponent */], data: { breadcrumb: 'Hotel index', title: 'Hotel index' } },
             {
-                path: ':id',
+                path: ':id/edit',
                 component: __WEBPACK_IMPORTED_MODULE_3__hotel_view_component__["a" /* HotelViewComponent */],
                 data: { title: 'Hotel view' },
                 resolve: {
@@ -643,7 +643,7 @@ module.exports = ""
 /***/ "./ui-app/js/layout/sidebar-left.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"rb-brand\" href=\"main\" target=\"_self\"><img class=\"rb-brand-logo\" src=\"/image/logotop_resize.png\" alt=\"\"><img class=\"rb-brand-logo-mini\" src=\"/image/logo-mini_resize.png\" alt=\"\"></a><div class=\"rb-sidebar-menu-container\" rb-sidebar-left><ul class=\"rb-sidebar-menu\"><li class=\"rb-sidebar-label\">MENU</li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/\"><span>Home</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel\" [queryParams]=\"{ page: 1, size: 15 }\"><span>Hotel</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel/78a9f2d0-de6d-4bd7-9c98-d207a8e13f8b\"><span>View hotel</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/dashboard\"><span>Dashboard</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/not-create-this-page-yet\"><span>No page</span></a></li></ul></div><a class=\"rb-sidebar-toggle\" rb-sidebar-toggler><span><</span></a>"
+module.exports = "<a class=\"rb-brand\" href=\"main\" target=\"_self\"><img class=\"rb-brand-logo\" src=\"/image/logotop_resize.png\" alt=\"\"><img class=\"rb-brand-logo-mini\" src=\"/image/logo-mini_resize.png\" alt=\"\"></a><div class=\"rb-sidebar-menu-container\" rb-sidebar-left><ul class=\"rb-sidebar-menu\"><li class=\"rb-sidebar-label\">MENU</li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/\"><span>Home</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel\" [queryParams]=\"{ page: 1, size: 15 }\"><span>Hotel search</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel/78a9f2d0-de6d-4bd7-9c98-d207a8e13f8b/edit\"><span>Hotel edit</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/dashboard\"><span>Dashboard</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/not-create-this-page-yet\"><span>No page</span></a></li></ul></div><a class=\"rb-sidebar-toggle\" rb-sidebar-toggler><span><</span></a>"
 
 /***/ }),
 
@@ -863,7 +863,7 @@ var PageNotFoundComponent = (function () {
 PageNotFoundComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'page-not-found',
-        template: "\n\t\t<h1 class=\"text-center\">404 PAGE NOT FOUND</h1>\n\t"
+        template: "\n\t\t<h1 class=\"text-center\">404</h1><h3 class=\"text-center\">PAGE NOT FOUND</h3>\n\t"
     }),
     __metadata("design:paramtypes", [])
 ], PageNotFoundComponent);

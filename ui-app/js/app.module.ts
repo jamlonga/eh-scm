@@ -4,7 +4,7 @@ import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-// import { RebootUIModule } from 'reboot-ui2';
+// import { RebootUIModule } from '../../node_modules/reboot-ui/js2';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';

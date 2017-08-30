@@ -18,7 +18,7 @@ const ROUTES: Routes = [
 		children: [
 			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel index', title: 'Hotel index' }},
 			{
-				path: ':id',
+				path: ':id/edit',
 				component: HotelViewComponent,
 				data: { title: 'Hotel view' },
 				resolve: {
