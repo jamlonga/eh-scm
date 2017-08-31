@@ -1,5 +1,6 @@
 package com.exciteholidays.scm.domain;
 
+import com.datastax.driver.core.LocalDate;
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
@@ -16,22 +17,12 @@ public class RoomOccupancy implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @PrimaryKeyColumn(
-    name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
-  private Long id;
-
-  @PrimaryKeyColumn(
-    name = "contract_id",
-    ordinal = 0,
-    type = PrimaryKeyType.CLUSTERED,
-    ordering = Ordering.ASCENDING)
+    name = "contract_id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
   @Column(value="contract_id")
   private Long contractId;
 
   @PrimaryKeyColumn(
-    name = "room_id",
-    ordinal = 1,
-    type = PrimaryKeyType.CLUSTERED,
-    ordering = Ordering.ASCENDING)
+    name = "room_id", ordinal = 1, type = PrimaryKeyType.PARTITIONED)
   @Column(value="room_id")
   private Long roomId;
 
@@ -60,20 +51,12 @@ public class RoomOccupancy implements Serializable {
   private Integer order_sort;
 
   @Column(value="date_created")
-  private Date dateCreated;
+  private LocalDate dateCreated = LocalDate.fromMillisSinceEpoch(new Date().getTime());
 
   @Column(value="last_updated")
-  private Date lastUpdated;
+  private LocalDate lastUpdated = LocalDate.fromMillisSinceEpoch(new Date().getTime());
 
   public RoomOccupancy() {
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
   }
 
   public Long getRoomId() {
@@ -156,19 +139,19 @@ public class RoomOccupancy implements Serializable {
     this.order_sort = order_sort;
   }
 
-  public Date getDateCreated() {
+  public LocalDate getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(Date dateCreated) {
+  public void setDateCreated(LocalDate dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Date getLastUpdated() {
+  public LocalDate getLastUpdated() {
     return lastUpdated;
   }
 
-  public void setLastUpdated(Date lastUpdated) {
+  public void setLastUpdated(LocalDate lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
 }

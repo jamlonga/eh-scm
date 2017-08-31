@@ -1,5 +1,6 @@
 spring:
   data:
     cassandra:
-      keyspace-name: scm
+      keyspace-name: eh_scm
       contact-points: localhost
+

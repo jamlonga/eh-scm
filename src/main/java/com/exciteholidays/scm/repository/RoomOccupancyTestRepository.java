@@ -4,9 +4,9 @@ import com.datastax.driver.core.querybuilder.QueryBuilder;
 import com.datastax.driver.core.querybuilder.Select;
 import com.exciteholidays.scm.domain.RoomOccupancy;
 import org.springframework.data.cassandra.core.CassandraOperations;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.repository.Repository;
 
-@Repository
+@org.springframework.stereotype.Repository
 public class RoomOccupancyTestRepository {
 
   private final CassandraOperations cassandraTemplate;
@@ -32,7 +32,7 @@ public class RoomOccupancyTestRepository {
   }
 
   public RoomOccupancy findByContractIdAndRoomId(Integer contractId, Integer roomId) {
-    Select select = QueryBuilder.select().from(" room_occupancy_by_contract_room_mview");
+    Select select = QueryBuilder.select().from(" room_occupancy");
     select.where(QueryBuilder.eq("contract_id", contractId));
     select.where(QueryBuilder.eq("room_id", roomId));
     return cassandraTemplate.selectOne(select, RoomOccupancy.class);

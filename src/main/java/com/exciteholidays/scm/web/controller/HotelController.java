@@ -37,22 +37,19 @@ public class HotelController {
       return new ResponseEntity<>(savedHotel, HttpStatus.CREATED);
     }
 
-    /*
+/*
     @PutMapping
     public ResponseEntity<Hotel> update(@RequestBody Hotel hotel) {
-        Hotel savedHotel = this.hotelService.update(hotel);
+        Hotel savedHotel = hotelService.update(hotel);
         return new ResponseEntity<>(savedHotel, HttpStatus.CREATED);
     }
 
+*/
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<String> delete(@PathVariable("id") UUID uuid) {
-        this.hotelService.delete(uuid);
-        return new ResponseEntity<>("Deleted", HttpStatus.ACCEPTED);
+    public ResponseEntity<String> delete(@PathVariable("id") Long id) {
+        hotelService.delete(id);
+        return new ResponseEntity<>("Deleted", HttpStatus.OK);
     }
 
-    @GetMapping(path = "/fromstate/{state}")
-    public List<Hotel> findHotelsInState(@PathVariable("state") String state) {
-        return this.hotelService.findHotelsInState(state);
-    }
-    */
+
 }

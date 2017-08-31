@@ -3,3 +3,4 @@ spring:
     cassandra:
       keyspace-name: eh_scm
       contact-points: localhost
+

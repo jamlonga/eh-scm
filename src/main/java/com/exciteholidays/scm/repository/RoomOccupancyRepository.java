@@ -10,6 +10,6 @@ public interface RoomOccupancyRepository extends CassandraRepository<RoomOccupan
   @Query("Select * from room_occupancy limit 15")
   Iterable<RoomOccupancy> findAll();
 
-  @Query("Select * from room_occupancy_by_contract_room_view where contract_id = ?0 and room_id = ?1 Limit 1")
+  @Query("Select * from room_occupancy where contract_id = ?0 and room_id = ?1 limit 1")
   public RoomOccupancy findByContractIdAndRoomId(Long contractId, Long roomId);
 }

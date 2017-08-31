@@ -37,9 +37,6 @@ public class RoomOccupancyService {
   }
 
   public RoomOccupancy save(RoomOccupancy roomOccupancy) {
-    if (roomOccupancy.getId() == null) {
-      roomOccupancy.setId(sequenceGeneratorService.generateSequence("room_occupancy"));
-    }
     roomOccupancyRepository.save(roomOccupancy);
     return roomOccupancy;
   }

@@ -6,7 +6,7 @@ import org.springframework.data.cassandra.repository.Query;
 
 public interface RoomRepository extends CassandraRepository<Room> {
 
-  @Query("Select * from room_by_hotel_view where hotel_id =?0")
+  @Query("Select * from room_by_hotel_id where hotel_id =?0")
   public Iterable<Room> findByHotelId(Integer hotelId);
 
 

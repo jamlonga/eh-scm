@@ -1,4 +1,5 @@
 package com.exciteholidays.scm.domain;
+import com.datastax.driver.core.LocalDate;
 import org.springframework.cassandra.core.Ordering;
 import org.springframework.cassandra.core.PrimaryKeyType;
 import org.springframework.data.cassandra.mapping.Column;
@@ -17,14 +18,10 @@ public class Hotel implements Serializable {
     name = "id", ordinal = 0, type = PrimaryKeyType.PARTITIONED)
   private Long id;
 
-  @PrimaryKeyColumn(
-    name = "name",
-    ordinal = 0,
-    type = PrimaryKeyType.CLUSTERED,
-    ordering = Ordering.ASCENDING)
+  @Column (value = "name")
   private String name;
 
-  @Column
+  @Column (value = "address")
   private String address;
 
   @Column(value="post_code")
@@ -34,13 +31,13 @@ public class Hotel implements Serializable {
   private Integer countryId;
 
   @Column(value="date_created")
-  private Date dateCreated ;
+  private LocalDate dateCreated = LocalDate.fromMillisSinceEpoch(new Date().getTime());
 
   @Column(value="last_updated")
-  private Date lastUpdated ;
+  private LocalDate lastUpdated = LocalDate.fromMillisSinceEpoch(new Date().getTime());
 
   @Column (value = "order_enable")
-  private Boolean orderEnable ;
+  private Boolean orderEnable = true;
 
   public Hotel() {
   }
@@ -90,19 +87,19 @@ public class Hotel implements Serializable {
     this.countryId = countryId;
   }
 
-  public Date getDateCreated() {
+  public LocalDate getDateCreated() {
     return dateCreated;
   }
 
-  public void setDateCreated(Date dateCreated) {
+  public void setDateCreated(LocalDate dateCreated) {
     this.dateCreated = dateCreated;
   }
 
-  public Date getLastUpdated() {
+  public LocalDate getLastUpdated() {
     return lastUpdated;
   }
 
-  public void setLastUpdated(Date lastUpdated) {
+  public void setLastUpdated(LocalDate lastUpdated) {
     this.lastUpdated = lastUpdated;
   }
 

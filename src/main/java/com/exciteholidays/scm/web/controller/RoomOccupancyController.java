@@ -12,11 +12,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Map;
 
 @RestController
-@RequestMapping("api/scm/v1/occupancy")
+@RequestMapping("api/scm/v1/occupancies")
 public class RoomOccupancyController {
 
   private final HotelService hotelService;
@@ -55,7 +53,7 @@ public class RoomOccupancyController {
   @PostMapping(path = "/bulk_create")
   public ResponseEntity<String> save() {
 /*
-    for (int i=0;i<10000;i++) {
+    for (int i=0;i<100;i++) {
       Hotel hotel = new Hotel();
       hotel.setName("Hotel Test"+i);
       hotel.setOrderEnable(true);
@@ -63,9 +61,9 @@ public class RoomOccupancyController {
       LOGGER.debug("h:"+i);
       System.out.println("h:"+i);
 
-    }*/
+    }
     Iterable<Hotel> hotels = hotelService.findAll();
-  /*  hotels.forEach(hotel -> {
+    hotels.forEach(hotel -> {
         for (int j = 0; j < 5; j++) {
           Contract contract = new Contract();
           contract.setHotelId(hotel.getId());
@@ -83,7 +81,8 @@ public class RoomOccupancyController {
         }
       }
     );
-*/
+    */
+
 
     Iterable<Contract> contracts = contractService.findAll();
     contracts.forEach(contract -> {
