@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.RedirectView;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.HashMap;
 
@@ -15,8 +16,7 @@ public class GenericController {
 		"hotel/{id}/edit",
 		"dashboard"
 	}, method = RequestMethod.GET)
-	public RedirectView generic() {
-		return new RedirectView("/index.html", true);
+	public ModelAndView generic() {
+		return new ModelAndView("/index.html");
 	}
-	// public void generic() {}
 }

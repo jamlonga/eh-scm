@@ -360,7 +360,7 @@ var _a, _b;
 /***/ "./ui-app/js/hotel/hotel-view.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">{{title}}</h2><div class=\"m-b-xs\" *ngIf=\"model.id\"><span class=\"m-r-md\"><label>Hotel ID:&nbsp;</label><span class=\"form-control-static fill-dash\">{{model.id}}</span></span></div><div class=\"row\"><div class=\"col-md-6\"><div class=\"panel panel-default\"><form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" novalidate autocomplete=\"off\"><div class=\"panel-body\"><div class=\"form-group\"><label>Hotel name</label><input class=\"form-control\" type=\"text\" placeholder=\"Hotel name\" formControlName=\"name\" tabindex=\"1\"></div><div class=\"form-group\"><label>Address</label><textarea class=\"form-control\" placeholder=\"Address\" formControlName=\"address\" tabindex=\"1\"></textarea></div><div class=\"form-group\"><label>Post code</label><input class=\"form-control\" type=\"text\" placeholder=\"Post code\" formControlName=\"postCode\" tabindex=\"1\"></div></div><div class=\"panel-footer button-pane\"><button class=\"m-l-xs btn btn-primary\" type=\"submit\" [disabled]=\"form.disabled\" tabindex=\"1\">Save</button><button class=\"m-l-xs btn btn-default\" type=\"button\" [disabled]=\"form.disabled\" routerLink=\"/hotel\" tabindex=\"1\">Cancel</button></div></form></div></div></div></div>"
+module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">{{title}}</h2><div class=\"m-b-xs\" *ngIf=\"model.id\"><span class=\"m-r-md\"><label>Hotel ID:&nbsp;</label><span class=\"form-control-static fill-dash\">{{model.id}}</span></span></div><div class=\"row\"><div class=\"col-md-6\"><div class=\"panel panel-default\"><form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" novalidate autocomplete=\"off\"><div class=\"panel-body\"><div class=\"form-group\"><label>Hotel name</label><input class=\"form-control\" type=\"text\" placeholder=\"Hotel name\" formControlName=\"name\" tabindex=\"1\"></div><div class=\"form-group\"><label>Address</label><textarea class=\"form-control\" placeholder=\"Address\" formControlName=\"address\" tabindex=\"1\"></textarea></div><div class=\"form-group\"><label>Post code</label><input class=\"form-control\" type=\"text\" placeholder=\"Post code\" formControlName=\"postCode\" tabindex=\"1\"></div></div><div class=\"panel-footer button-pane\"><button class=\"m-l-xs btn btn-primary\" type=\"submit\" [disabled]=\"form.disabled\" tabindex=\"1\">Save</button><button class=\"m-l-xs btn btn-default\" type=\"button\" [disabled]=\"form.disabled\" routerLink=\"/hotel\" tabindex=\"1\">Cancel</button></div></form></div></div><div class=\"col-md-6\"><pre>{{model | json}}</pre></div></div></div>"
 
 /***/ }),
 
@@ -416,11 +416,16 @@ var HotelViewComponent = (function () {
         var params = this.form.value;
         this.form.disable();
         this.hotelService.save(params)
-            .finally(function () {
-            _this.form.enable();
-        })
             .subscribe(function (response) {
-            _this.router.navigate(['/hotel', response.id, 'edit']);
+            if (params.id) {
+                window.scrollTo(0, 0);
+                _this.model = response;
+                _this.title = _this.model.name;
+                _this.form.enable();
+            }
+            else {
+                _this.router.navigate(['/hotel', response.id, 'edit']);
+            }
         }, function (error) {
             console.log('error', error);
         });

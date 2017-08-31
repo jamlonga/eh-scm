@@ -41,11 +41,15 @@ export class HotelViewComponent implements OnInit {
 		const params: Hotel = this.form.value
 		this.form.disable();
 		this.hotelService.save(params)
-		.finally(() => {
-			this.form.enable();
-		})
 		.subscribe((response) => {
-			this.router.navigate(['/hotel', response.id, 'edit']);
+			if (params.id) {
+				window.scrollTo(0, 0);
+				this.model = response;
+				this.title = this.model.name;
+				this.form.enable();
+			} else {
+				this.router.navigate(['/hotel', response.id, 'edit']);
+			}
 		}, (error) => {
 			console.log('error', error)
 		});
