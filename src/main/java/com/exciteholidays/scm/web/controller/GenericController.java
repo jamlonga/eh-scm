@@ -17,4 +17,5 @@ public class GenericController {
 	public RedirectView generic() {
 		return new RedirectView("/index.html", true);
 	}
+	// public void generic() {}
 }
