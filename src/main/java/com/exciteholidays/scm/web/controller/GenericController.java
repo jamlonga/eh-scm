@@ -11,6 +11,7 @@ import java.util.HashMap;
 public class GenericController {
 	@RequestMapping(value = {
 		"hotel",
+		"hotel/add",
 		"hotel/{id}/edit",
 		"dashboard"
 	}, method = RequestMethod.GET)

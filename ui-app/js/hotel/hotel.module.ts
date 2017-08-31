@@ -17,11 +17,11 @@ const ROUTES: Routes = [
 		canActivate: [RounterCanActivateService],
 		canActivateChild: [RounterCanActivateService],
 		children: [
-			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel list', title: 'Hotel list' }},
+			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel list' }},
+			{ path: 'add', component: HotelViewComponent, data: { breadcrumb: 'Add hotel' }},
 			{
 				path: ':id/edit',
 				component: HotelViewComponent,
-				data: { title: 'Hotel view' },
 				resolve: {
 					model: HotelResolveService
 				}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { HotelService } from '../shared/services/hotel.service';
 import { Hotel } from '../shared/types/hotel';
@@ -15,23 +15,25 @@ export class HotelViewComponent implements OnInit {
 	form: FormGroup;
 
 	constructor(
-		private route: ActivatedRoute,
-		private hotelService: HotelService
+		private activatedRoute: ActivatedRoute,
+		private hotelService: HotelService,
+		private router: Router
 	) {}
 
 	ngOnInit(): void {
-		this.title = this.route.snapshot.data.title;
-		this.id = this.route.snapshot.params.id;
-		this.model = this.route.snapshot.data.model;
+		if (this.activatedRoute.snapshot.data.model) {
+			this.model = this.activatedRoute.snapshot.data.model;
+			this.title = this.model.name;
+		} else {
+			this.model = new Hotel;
+			this.title = this.activatedRoute.snapshot.data.breadcrumb;
+		}
+		this.id = this.activatedRoute.snapshot.params.id;
 		this.form = new FormGroup({
 			id: new FormControl(this.model.id),
 			name: new FormControl(this.model.name),
 			address: new FormControl(this.model.address),
-			postCode: new FormControl(this.model.postCode),
-			countryId: new FormControl(this.model.countryId),
-			dateCreated: new FormControl(this.model.dateCreated),
-			lastUpdated: new FormControl(this.model.lastUpdated),
-			orderEnable: new FormControl(this.model.orderEnable)
+			postCode: new FormControl(this.model.postCode)
 		});
 	}
 
@@ -43,10 +45,9 @@ export class HotelViewComponent implements OnInit {
 			this.form.enable();
 		})
 		.subscribe((response) => {
-			console.log('success', response);
+			this.router.navigate(['/hotel', response.id, 'edit']);
 		}, (error) => {
 			console.log('error', error)
 		});
 	}
-
 }

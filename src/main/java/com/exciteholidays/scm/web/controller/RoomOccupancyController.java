@@ -52,7 +52,7 @@ public class RoomOccupancyController {
   }
   @PostMapping(path = "/bulk_create")
   public ResponseEntity<String> save() {
-/*
+
     for (int i=0;i<100;i++) {
       Hotel hotel = new Hotel();
       hotel.setName("Hotel Test"+i);
@@ -81,7 +81,7 @@ public class RoomOccupancyController {
         }
       }
     );
-    */
+
 
 
     Iterable<Contract> contracts = contractService.findAll();

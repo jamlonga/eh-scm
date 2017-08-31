@@ -1,7 +1,8 @@
 .container-fluid.m-t-xs
 	h2.section-heading Hotel list
 	.panel.panel-default(*ngIf="size", @slideInDown)
-		//- .panel-body
+		.panel-body
+			button.btn.btn-primary(routerLink="/hotel/add") Add hotel
 		table.table.table-hover
 			thead: tr
 				th Hotel ID

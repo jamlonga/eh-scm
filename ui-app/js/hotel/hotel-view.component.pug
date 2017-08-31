@@ -1,5 +1,5 @@
 .container-fluid.m-t-xs
-	h2.section-heading {{model.name}}
+	h2.section-heading {{title}}
 	.m-b-xs(*ngIf="model.id")
 		span.m-r-md
 			label Hotel ID:&nbsp;
@@ -9,6 +9,14 @@
 			.panel.panel-default
 				form([formGroup]="form", (ngSubmit)="onSubmit()", novalidate, autocomplete="off")
 					.panel-body
+						.form-group
+							label Hotel name
+							input.form-control(
+								type="text",
+								placeholder="Hotel name",
+								formControlName="name",
+								tabindex="1"
+							)
 						.form-group
 							label Address
 							textarea.form-control(
