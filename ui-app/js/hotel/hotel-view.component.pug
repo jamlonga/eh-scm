@@ -1,3 +1,38 @@
-h2 {{title}}
-h4 ID: {{id}}
-pre {{model | json}}
+.container-fluid.m-t-xs
+	h2.section-heading {{model.name}}
+	.m-b-xs(*ngIf="model.id")
+		span.m-r-md
+			label Hotel ID:&nbsp;
+			span.form-control-static.fill-dash {{model.id}}
+	.row
+		.col-md-6
+			.panel.panel-default
+				form([formGroup]="form", (ngSubmit)="onSubmit()", novalidate, autocomplete="off")
+					.panel-body
+						.form-group
+							label Address
+							textarea.form-control(
+								placeholder="Address",
+								formControlName="address",
+								tabindex="1"
+							)
+						.form-group
+							label Post code
+							input.form-control(
+								type="text",
+								placeholder="Post code",
+								formControlName="postCode",
+								tabindex="1"
+							)
+					.panel-footer.button-pane
+						button.m-l-xs.btn.btn-primary(
+							type="submit",
+							[disabled]="form.disabled",
+							tabindex="1"
+						) Save
+						button.m-l-xs.btn.btn-default(
+							type="button",
+							[disabled]="form.disabled",
+							routerLink="/hotel",
+							tabindex="1"
+						) Cancel

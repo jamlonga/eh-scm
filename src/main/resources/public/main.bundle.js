@@ -101,7 +101,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-// import { RebootUIModule } from 'reboot-ui2';
+// import { RebootUIModule } from '../../node_modules/reboot-ui/js2';
 
 
 
@@ -126,7 +126,7 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["d" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* ReactiveFormsModule */],
             __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
             // RebootUIModule.forRoot(),
             __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__["a" /* SharedModule */],
@@ -251,7 +251,7 @@ DashboardModule = __decorate([
 /***/ "./ui-app/js/hotel/hotel-index.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{title}}</h2><pre>{{queryParams | json}}</pre><div *ngIf=\"size\" @slideInDown><h3 class=\"text-primary\">Total: {{size}}</h3><table class=\"table table-hover\"><thead><tr><th>ID</th><th>Name</th><th>Address</th><th>Zip</th></tr></thead><tbody><tr *ngFor=\"let hotel of hotels\"><td>{{hotel.id}}</td><td>{{hotel.name}}</td><td>{{hotel.address}}</td><td>{{hotel.zip}}</td></tr></tbody></table></div>"
+module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">Hotel list</h2><div class=\"panel panel-default\" *ngIf=\"size\" @slideInDown><table class=\"table table-hover\"><thead><tr><th>Hotel ID</th><th>Name</th><th>Address</th><th>Post code</th></tr></thead><tbody><tr *ngFor=\"let hotel of hotels\"><td><a [routerLink]=\"['/hotel', hotel.id, 'edit']\">{{hotel.id}}</a></td><td>{{hotel.name}}</td><td>{{hotel.address}}</td><td>{{hotel.postCode}}</td></tr></tbody></table><div class=\"panel-footer\">&nbsp;</div></div></div>"
 
 /***/ }),
 
@@ -360,7 +360,7 @@ var _a, _b;
 /***/ "./ui-app/js/hotel/hotel-view.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{title}}</h2><h4>ID: {{id}}</h4><pre>{{model | json}}</pre>"
+module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">{{model.name}}</h2><div class=\"m-b-xs\" *ngIf=\"model.id\"><span class=\"m-r-md\"><label>Hotel ID:&nbsp;</label><span class=\"form-control-static fill-dash\">{{model.id}}</span></span></div><div class=\"row\"><div class=\"col-md-6\"><div class=\"panel panel-default\"><form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" novalidate autocomplete=\"off\"><div class=\"panel-body\"><div class=\"form-group\"><label>Address</label><textarea class=\"form-control\" placeholder=\"Address\" formControlName=\"address\" tabindex=\"1\"></textarea></div><div class=\"form-group\"><label>Post code</label><input class=\"form-control\" type=\"text\" placeholder=\"Post code\" formControlName=\"postCode\" tabindex=\"1\"></div></div><div class=\"panel-footer button-pane\"><button class=\"m-l-xs btn btn-primary\" type=\"submit\" [disabled]=\"form.disabled\" tabindex=\"1\">Save</button><button class=\"m-l-xs btn btn-default\" type=\"button\" [disabled]=\"form.disabled\" routerLink=\"/hotel\" tabindex=\"1\">Cancel</button></div></form></div></div></div></div>"
 
 /***/ }),
 
@@ -371,6 +371,8 @@ module.exports = "<h2>{{title}}</h2><h4>ID: {{id}}</h4><pre>{{model | json}}</pr
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelViewComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__ = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -382,14 +384,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
+
 var HotelViewComponent = (function () {
-    function HotelViewComponent(route) {
+    function HotelViewComponent(route, hotelService) {
         this.route = route;
+        this.hotelService = hotelService;
     }
     HotelViewComponent.prototype.ngOnInit = function () {
         this.title = this.route.snapshot.data.title;
         this.id = this.route.snapshot.params.id;
         this.model = this.route.snapshot.data.model;
+        this.form = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
+            id: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.id),
+            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.name),
+            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.address),
+            postCode: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.postCode),
+            countryId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.countryId),
+            dateCreated: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.dateCreated),
+            lastUpdated: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.lastUpdated),
+            orderEnable: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.orderEnable)
+        });
+    };
+    HotelViewComponent.prototype.onSubmit = function () {
+        var _this = this;
+        var params = this.form.value;
+        this.form.disable();
+        this.hotelService.save(params)
+            .finally(function () {
+            _this.form.enable();
+        })
+            .subscribe(function (response) {
+            console.log('success', response);
+        }, function (error) {
+            console.log('error', error);
+        });
     };
     return HotelViewComponent;
 }());
@@ -398,10 +427,10 @@ HotelViewComponent = __decorate([
         selector: 'hotel-view',
         template: __webpack_require__("./ui-app/js/hotel/hotel-view.component.pug"),
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__["a" /* HotelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__["a" /* HotelService */]) === "function" && _b || Object])
 ], HotelViewComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=hotel-view.component.js.map
 
 /***/ }),
@@ -412,36 +441,25 @@ var _a;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
 
 var HotelComponent = (function () {
-    function HotelComponent(route) {
-        this.route = route;
+    function HotelComponent() {
     }
-    HotelComponent.prototype.ngOnInit = function () {
-        this.title = this.route.snapshot.data.title;
-    };
     return HotelComponent;
 }());
 HotelComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'hotel',
-        template: "\n\t\t<h1>{{title}}</h1>\n\t\t<router-outlet></router-outlet>\n\t",
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object])
+        template: "\n\t\t<router-outlet></router-outlet>\n\t",
+    })
 ], HotelComponent);
 
-var _a;
 //# sourceMappingURL=hotel.component.js.map
 
 /***/ }),
@@ -452,19 +470,21 @@ var _a;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hotel_component__ = __webpack_require__("./ui-app/js/hotel/hotel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hotel_index_component__ = __webpack_require__("./ui-app/js/hotel/hotel-index.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hotel_view_component__ = __webpack_require__("./ui-app/js/hotel/hotel-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__hotel_resolve_service__ = __webpack_require__("./ui-app/js/hotel/hotel-resolve.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_services_router_can_activate_service__ = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hotel_component__ = __webpack_require__("./ui-app/js/hotel/hotel.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__ = __webpack_require__("./ui-app/js/hotel/hotel-index.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__ = __webpack_require__("./ui-app/js/hotel/hotel-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__ = __webpack_require__("./ui-app/js/hotel/hotel-resolve.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__ = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -476,18 +496,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var ROUTES = [
     {
         path: 'hotel',
-        component: __WEBPACK_IMPORTED_MODULE_1__hotel_component__["a" /* HotelComponent */],
+        component: __WEBPACK_IMPORTED_MODULE_2__hotel_component__["a" /* HotelComponent */],
         data: { breadcrumb: 'Hotel', title: 'Hotel' },
-        canActivate: [__WEBPACK_IMPORTED_MODULE_7__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
-        canActivateChild: [__WEBPACK_IMPORTED_MODULE_7__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
+        canActivate: [__WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
+        canActivateChild: [__WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
         children: [
-            { path: '', component: __WEBPACK_IMPORTED_MODULE_2__hotel_index_component__["a" /* HotelIndexComponent */], data: { breadcrumb: 'Hotel index', title: 'Hotel index' } },
+            { path: '', component: __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__["a" /* HotelIndexComponent */], data: { breadcrumb: 'Hotel list', title: 'Hotel list' } },
             {
-                path: ':id',
-                component: __WEBPACK_IMPORTED_MODULE_3__hotel_view_component__["a" /* HotelViewComponent */],
+                path: ':id/edit',
+                component: __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__["a" /* HotelViewComponent */],
                 data: { title: 'Hotel view' },
                 resolve: {
-                    model: __WEBPACK_IMPORTED_MODULE_6__hotel_resolve_service__["a" /* HotelResolveService */]
+                    model: __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__["a" /* HotelResolveService */]
                 }
             }
         ]
@@ -501,20 +521,22 @@ var HotelModule = (function () {
 HotelModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_5__shared_shared_module__["a" /* SharedModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["e" /* RouterModule */].forRoot(ROUTES)
+            __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__["a" /* SharedModule */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["e" /* RouterModule */].forRoot(ROUTES),
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* ReactiveFormsModule */]
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["e" /* RouterModule */]
+            __WEBPACK_IMPORTED_MODULE_5__angular_router__["e" /* RouterModule */]
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_1__hotel_component__["a" /* HotelComponent */],
-            __WEBPACK_IMPORTED_MODULE_2__hotel_index_component__["a" /* HotelIndexComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__hotel_view_component__["a" /* HotelViewComponent */]
+            __WEBPACK_IMPORTED_MODULE_2__hotel_component__["a" /* HotelComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__["a" /* HotelIndexComponent */],
+            __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__["a" /* HotelViewComponent */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_7__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */],
-            __WEBPACK_IMPORTED_MODULE_6__hotel_resolve_service__["a" /* HotelResolveService */]
+            __WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */],
+            __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__["a" /* HotelResolveService */]
         ]
     })
 ], HotelModule);
@@ -643,7 +665,7 @@ module.exports = ""
 /***/ "./ui-app/js/layout/sidebar-left.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<a class=\"rb-brand\" href=\"main\" target=\"_self\"><img class=\"rb-brand-logo\" src=\"/image/logotop_resize.png\" alt=\"\"><img class=\"rb-brand-logo-mini\" src=\"/image/logo-mini_resize.png\" alt=\"\"></a><div class=\"rb-sidebar-menu-container\" rb-sidebar-left><ul class=\"rb-sidebar-menu\"><li class=\"rb-sidebar-label\">MENU</li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/\"><span>Home</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel\" [queryParams]=\"{ page: 1, size: 15 }\"><span>Hotel</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel/78a9f2d0-de6d-4bd7-9c98-d207a8e13f8b\"><span>View hotel</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/dashboard\"><span>Dashboard</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/not-create-this-page-yet\"><span>No page</span></a></li></ul></div><a class=\"rb-sidebar-toggle\" rb-sidebar-toggler><span><</span></a>"
+module.exports = "<a class=\"rb-brand\" href=\"main\" target=\"_self\"><img class=\"rb-brand-logo\" src=\"/image/logotop_resize.png\" alt=\"\"><img class=\"rb-brand-logo-mini\" src=\"/image/logo-mini_resize.png\" alt=\"\"></a><div class=\"rb-sidebar-menu-container\" rb-sidebar-left><ul class=\"rb-sidebar-menu\"><li class=\"rb-sidebar-label\">MENU</li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/\"><span>Home</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/hotel\" [queryParams]=\"{ page: 1, size: 15 }\"><span>Hotel list</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/dashboard\"><span>Dashboard</span></a></li><li class=\"rb-sidebar-menu-item\"><a routerLink=\"/not-create-this-page-yet\"><span>No page</span></a></li></ul></div><a class=\"rb-sidebar-toggle\" rb-sidebar-toggler><span><</span></a>"
 
 /***/ }),
 
@@ -863,7 +885,7 @@ var PageNotFoundComponent = (function () {
 PageNotFoundComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'page-not-found',
-        template: "\n\t\t<h1 class=\"text-center\">404 PAGE NOT FOUND</h1>\n\t"
+        template: "\n\t\t<h1 class=\"text-center\">404</h1><h3 class=\"text-center\">PAGE NOT FOUND</h3>\n\t"
     }),
     __metadata("design:paramtypes", [])
 ], PageNotFoundComponent);
@@ -925,20 +947,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import { Hotel } from 'shared/types';
 var HotelService = (function () {
     function HotelService(http) {
         this.http = http;
     }
     HotelService.prototype.list = function () {
         return this.http.get('/api/scm/v1/hotels')
-            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); })
-            .map(function (r) { return r.json(); });
+            .map(function (r) { return r.json(); })
+            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
     };
     HotelService.prototype.get = function (id) {
         return this.http.get("api/scm/v1/hotels/" + id)
-            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); })
-            .map(function (r) { return r.json(); });
+            .map(function (r) { return r.json(); })
+            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
+    };
+    HotelService.prototype.save = function (params) {
+        return this.http.post('api/scm/v1/hotels', params)
+            .map(function (r) { return r.json(); })
+            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
     };
     return HotelService;
 }());

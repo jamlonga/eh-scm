@@ -10,10 +10,17 @@ a.rb-brand(href="main", target="_self")
 				span Home
 		li.rb-sidebar-menu-item
 			a(routerLink="/hotel", [queryParams]="{ page: 1, size: 15 }")
+				span Hotel list
+		//- li.rb-sidebar-menu-item
+			a(routerLink="/hotel/1/edit")
+				span Hotel edit
+		//- li.rb-sidebar-menu-item
+			a.rb-sidebar-menu-toggler
 				span Hotel
-		li.rb-sidebar-menu-item
-			a(routerLink="/hotel/78a9f2d0-de6d-4bd7-9c98-d207a8e13f8b")
-				span View hotel
+				i.arrow
+			ul.rb-sidebar-sub-menu
+				li: a(routerLink="/hotel", [queryParams]="{ page: 1, size: 15 }") Search
+				li: a(routerLink="/hotel/1") View
 		li.rb-sidebar-menu-item
 			a(routerLink="/dashboard")
 				span Dashboard
