@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HotelComponent } from './hotel.component'
 import { HotelIndexComponent } from './hotel-index.component'
 import { HotelViewComponent } from './hotel-view.component'
@@ -16,7 +17,7 @@ const ROUTES: Routes = [
 		canActivate: [RounterCanActivateService],
 		canActivateChild: [RounterCanActivateService],
 		children: [
-			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel index', title: 'Hotel index' }},
+			{ path: '', component: HotelIndexComponent, data: { breadcrumb: 'Hotel list', title: 'Hotel list' }},
 			{
 				path: ':id/edit',
 				component: HotelViewComponent,
@@ -31,7 +32,9 @@ const ROUTES: Routes = [
 @NgModule({
 	imports: [
 		SharedModule,
-		RouterModule.forRoot(ROUTES)
+		RouterModule.forRoot(ROUTES),
+		FormsModule,
+		ReactiveFormsModule
 	],
 	exports: [
 		RouterModule
@@ -40,7 +43,7 @@ const ROUTES: Routes = [
 		HotelComponent,
 		HotelIndexComponent,
 		HotelViewComponent
-	],
+],
 	providers: [
 		RounterCanActivateService,
 		HotelResolveService
