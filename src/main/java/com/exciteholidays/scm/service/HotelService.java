@@ -24,16 +24,25 @@ public class HotelService {
   }
 
   public Hotel save(Hotel hotel) {
-      if (hotel.getId() == null) {
-         hotel.setId(sequenceGeneratorService.generateSequence("hotel"));
-         hotel.setDateCreated(LocalDate.fromMillisSinceEpoch(new Date().getTime()));
-      }else{
-        Hotel prevHotel = findById(hotel.getId());
-        hotel.setDateCreated(prevHotel.getDateCreated());
+    Boolean enableSaving = false;
+    if (hotel.getId() == null) {
+       hotel.setId(sequenceGeneratorService.generateSequence("hotel"));
+       hotel.setDateCreated(LocalDate.fromMillisSinceEpoch(new Date().getTime()));
+       enableSaving = true;
+    }else{
+      Hotel currentHotel = findById(hotel.getId());
+      if(currentHotel !=null){
+        hotel.setDateCreated(currentHotel.getDateCreated());
+        enableSaving=true;
       }
+    }
+    if(enableSaving) {
       hotel.setLastUpdated(LocalDate.fromMillisSinceEpoch(new Date().getTime()));
       hotelRepository.save(hotel);
-      return hotel;
+    }else{
+      return null;
+    }
+    return hotel;
   }
 
   public Hotel findById(Long id) {
