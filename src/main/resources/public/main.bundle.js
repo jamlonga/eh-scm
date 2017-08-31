@@ -403,7 +403,7 @@ var HotelViewComponent = (function () {
             countryId: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.countryId),
             dateCreated: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.dateCreated),
             lastUpdated: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.lastUpdated),
-            orderEnable: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.orderEnable),
+            orderEnable: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.orderEnable)
         });
     };
     HotelViewComponent.prototype.onSubmit = function () {

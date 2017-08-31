@@ -31,7 +31,7 @@ export class HotelViewComponent implements OnInit {
 			countryId: new FormControl(this.model.countryId),
 			dateCreated: new FormControl(this.model.dateCreated),
 			lastUpdated: new FormControl(this.model.lastUpdated),
-			orderEnable: new FormControl(this.model.orderEnable),
+			orderEnable: new FormControl(this.model.orderEnable)
 		});
 	}
 
