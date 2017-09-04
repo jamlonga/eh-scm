@@ -1,5 +1,8 @@
 .container-fluid.m-t-xs
 	h2.section-heading {{title}}
+	ngb-alert(type="success", *ngIf="alert?.success", (close)="alert = undefined")
+		i.bo-icon-check.alert-icon
+		span Hotel successfully saved.
 	.m-b-xs(*ngIf="model.id")
 		span.m-r-md
 			label Hotel ID:&nbsp;

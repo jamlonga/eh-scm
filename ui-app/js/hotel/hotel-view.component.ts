@@ -13,6 +13,7 @@ export class HotelViewComponent implements OnInit {
 	id: number;
 	model: Hotel;
 	form: FormGroup;
+	alert: {};
 
 	constructor(
 		private activatedRoute: ActivatedRoute,
@@ -21,14 +22,15 @@ export class HotelViewComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
-		if (this.activatedRoute.snapshot.data.model) {
-			this.model = this.activatedRoute.snapshot.data.model;
+		const routeSnapshot = this.activatedRoute.snapshot;
+		if (routeSnapshot.data.model) {
+			this.model = routeSnapshot.data.model;
 			this.title = this.model.name;
 		} else {
 			this.model = new Hotel;
-			this.title = this.activatedRoute.snapshot.data.breadcrumb;
+			this.title = routeSnapshot.data.breadcrumb;
 		}
-		this.id = this.activatedRoute.snapshot.params.id;
+		this.id = routeSnapshot.params.id;
 		this.form = new FormGroup({
 			id: new FormControl(this.model.id),
 			name: new FormControl(this.model.name),
@@ -47,8 +49,9 @@ export class HotelViewComponent implements OnInit {
 				this.model = response;
 				this.title = this.model.name;
 				this.form.enable();
+				this.alert = { success: true };
 			} else {
-				this.router.navigate(['/hotel', response.id, 'edit']);
+				this.router.navigate(['/hotel', response.id, 'edit',]);
 			}
 		}, (error) => {
 			console.log('error', error)

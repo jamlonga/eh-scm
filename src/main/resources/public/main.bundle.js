@@ -151,7 +151,7 @@ AppModule = __decorate([
 /***/ "./ui-app/js/dashboard/dashboard.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<h2>{{title}}</h2>"
+module.exports = ""
 
 /***/ }),
 
@@ -360,7 +360,7 @@ var _a, _b;
 /***/ "./ui-app/js/hotel/hotel-view.component.pug":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">{{title}}</h2><div class=\"m-b-xs\" *ngIf=\"model.id\"><span class=\"m-r-md\"><label>Hotel ID:&nbsp;</label><span class=\"form-control-static fill-dash\">{{model.id}}</span></span></div><div class=\"row\"><div class=\"col-md-6\"><div class=\"panel panel-default\"><form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" novalidate autocomplete=\"off\"><div class=\"panel-body\"><div class=\"form-group\"><label>Hotel name</label><input class=\"form-control\" type=\"text\" placeholder=\"Hotel name\" formControlName=\"name\" tabindex=\"1\"></div><div class=\"form-group\"><label>Address</label><textarea class=\"form-control\" placeholder=\"Address\" formControlName=\"address\" tabindex=\"1\"></textarea></div><div class=\"form-group\"><label>Post code</label><input class=\"form-control\" type=\"text\" placeholder=\"Post code\" formControlName=\"postCode\" tabindex=\"1\"></div></div><div class=\"panel-footer button-pane\"><button class=\"m-l-xs btn btn-primary\" type=\"submit\" [disabled]=\"form.disabled\" tabindex=\"1\">Save</button><button class=\"m-l-xs btn btn-default\" type=\"button\" [disabled]=\"form.disabled\" routerLink=\"/hotel\" tabindex=\"1\">Cancel</button></div></form></div></div><div class=\"col-md-6\"><pre>{{model | json}}</pre></div></div></div>"
+module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-heading\">{{title}}</h2><ngb-alert type=\"success\" *ngIf=\"alert?.success\" (close)=\"alert = undefined\"><i class=\"bo-icon-check alert-icon\"></i><span>Hotel successfully saved.</span></ngb-alert><div class=\"m-b-xs\" *ngIf=\"model.id\"><span class=\"m-r-md\"><label>Hotel ID:&nbsp;</label><span class=\"form-control-static fill-dash\">{{model.id}}</span></span></div><div class=\"row\"><div class=\"col-md-6\"><div class=\"panel panel-default\"><form [formGroup]=\"form\" (ngSubmit)=\"onSubmit()\" novalidate autocomplete=\"off\"><div class=\"panel-body\"><div class=\"form-group\"><label>Hotel name</label><input class=\"form-control\" type=\"text\" placeholder=\"Hotel name\" formControlName=\"name\" tabindex=\"1\"></div><div class=\"form-group\"><label>Address</label><textarea class=\"form-control\" placeholder=\"Address\" formControlName=\"address\" tabindex=\"1\"></textarea></div><div class=\"form-group\"><label>Post code</label><input class=\"form-control\" type=\"text\" placeholder=\"Post code\" formControlName=\"postCode\" tabindex=\"1\"></div></div><div class=\"panel-footer button-pane\"><button class=\"m-l-xs btn btn-primary\" type=\"submit\" [disabled]=\"form.disabled\" tabindex=\"1\">Save</button><button class=\"m-l-xs btn btn-default\" type=\"button\" [disabled]=\"form.disabled\" routerLink=\"/hotel\" tabindex=\"1\">Cancel</button></div></form></div></div><div class=\"col-md-6\"><pre>{{model | json}}</pre></div></div></div>"
 
 /***/ }),
 
@@ -395,15 +395,16 @@ var HotelViewComponent = (function () {
         this.router = router;
     }
     HotelViewComponent.prototype.ngOnInit = function () {
-        if (this.activatedRoute.snapshot.data.model) {
-            this.model = this.activatedRoute.snapshot.data.model;
+        var routeSnapshot = this.activatedRoute.snapshot;
+        if (routeSnapshot.data.model) {
+            this.model = routeSnapshot.data.model;
             this.title = this.model.name;
         }
         else {
             this.model = new __WEBPACK_IMPORTED_MODULE_4__shared_types_hotel__["a" /* Hotel */];
-            this.title = this.activatedRoute.snapshot.data.breadcrumb;
+            this.title = routeSnapshot.data.breadcrumb;
         }
-        this.id = this.activatedRoute.snapshot.params.id;
+        this.id = routeSnapshot.params.id;
         this.form = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
             id: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.id),
             name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.name),
@@ -422,9 +423,10 @@ var HotelViewComponent = (function () {
                 _this.model = response;
                 _this.title = _this.model.name;
                 _this.form.enable();
+                _this.alert = { success: true };
             }
             else {
-                _this.router.navigate(['/hotel', response.id, 'edit']);
+                _this.router.navigate(['/hotel', response.id, 'edit',]);
             }
         }, function (error) {
             console.log('error', error);
