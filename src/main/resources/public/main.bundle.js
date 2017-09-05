@@ -14,16 +14,16 @@ webpackEmptyAsyncContext.id = "./ui-app lazy recursive";
 /***/ }),
 
 /***/ "./ui-app/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-// The file contents for the current environment will overwrite these during build.
-var environment = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false
 };
 //# sourceMappingURL=environment.js.map
@@ -38,82 +38,78 @@ module.exports = "<sidebar-left></sidebar-left><main><topbar></topbar><div class
 /***/ }),
 
 /***/ "./ui-app/js/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var AppComponent = (function () {
     function AppComponent() {
     }
     return AppComponent;
 }());
 AppComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'app',
         template: __webpack_require__("./ui-app/js/app.component.pug")
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);
-
+exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("./ui-app/js/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__dashboard_dashboard_component__ = __webpack_require__("./ui-app/js/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__page_not_found_component__ = __webpack_require__("./ui-app/js/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__layout_layout_module__ = __webpack_require__("./ui-app/js/layout/layout.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__dashboard_dashboard_module__ = __webpack_require__("./ui-app/js/dashboard/dashboard.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__hotel_hotel_module__ = __webpack_require__("./ui-app/js/hotel/hotel.module.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var http_1 = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+var animations_1 = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser/animations.es5.js");
+var forms_1 = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
 // import { RebootUIModule } from '../../node_modules/reboot-ui/js2';
-
-
-
-
-
-
-
-
+var ng_bootstrap_1 = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
+var shared_module_1 = __webpack_require__("./ui-app/js/shared/shared.module.ts");
+var app_component_1 = __webpack_require__("./ui-app/js/app.component.ts");
+var dashboard_component_1 = __webpack_require__("./ui-app/js/dashboard/dashboard.component.ts");
+var page_not_found_component_1 = __webpack_require__("./ui-app/js/page-not-found.component.ts");
+var layout_module_1 = __webpack_require__("./ui-app/js/layout/layout.module.ts");
+var dashboard_module_1 = __webpack_require__("./ui-app/js/dashboard/dashboard.module.ts");
+var hotel_module_1 = __webpack_require__("./ui-app/js/hotel/hotel.module.ts");
 var ROUTES = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_9__dashboard_dashboard_component__["a" /* DashboardComponent */], data: { breadcrumb: 'Dashboard', title: 'Dashboard' } },
-    { path: 'not-found', component: __WEBPACK_IMPORTED_MODULE_10__page_not_found_component__["a" /* PageNotFoundComponent */] },
-    { path: '**', component: __WEBPACK_IMPORTED_MODULE_10__page_not_found_component__["a" /* PageNotFoundComponent */] }
+    { path: '', component: dashboard_component_1.DashboardComponent, data: { breadcrumb: 'Dashboard', title: 'Dashboard' } },
+    { path: 'not-found', component: page_not_found_component_1.PageNotFoundComponent },
+    { path: '**', component: page_not_found_component_1.PageNotFoundComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -121,29 +117,29 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+    core_1.NgModule({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_5__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* HttpModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_forms__["f" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_6__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot(),
+            platform_browser_1.BrowserModule,
+            animations_1.BrowserAnimationsModule,
+            http_1.HttpModule,
+            forms_1.ReactiveFormsModule,
+            ng_bootstrap_1.NgbModule.forRoot(),
             // RebootUIModule.forRoot(),
-            __WEBPACK_IMPORTED_MODULE_7__shared_shared_module__["a" /* SharedModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["e" /* RouterModule */].forRoot(ROUTES),
-            __WEBPACK_IMPORTED_MODULE_11__layout_layout_module__["a" /* LayoutModule */],
-            __WEBPACK_IMPORTED_MODULE_12__dashboard_dashboard_module__["a" /* DashboardModule */],
-            __WEBPACK_IMPORTED_MODULE_13__hotel_hotel_module__["a" /* HotelModule */]
+            shared_module_1.SharedModule,
+            router_1.RouterModule.forRoot(ROUTES),
+            layout_module_1.LayoutModule,
+            dashboard_module_1.DashboardModule,
+            hotel_module_1.HotelModule
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
-            __WEBPACK_IMPORTED_MODULE_10__page_not_found_component__["a" /* PageNotFoundComponent */]
+            app_component_1.AppComponent,
+            page_not_found_component_1.PageNotFoundComponent
         ],
         providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
+        bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
-
+exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map
 
 /***/ }),
@@ -156,21 +152,26 @@ module.exports = ""
 /***/ }),
 
 /***/ "./ui-app/js/dashboard/dashboard.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var DashboardComponent = (function () {
     function DashboardComponent() {
     }
@@ -179,45 +180,45 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 DashboardComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'dashboard',
         template: __webpack_require__("./ui-app/js/dashboard/dashboard.component.pug"),
     }),
     __metadata("design:paramtypes", [])
 ], DashboardComponent);
-
+exports.DashboardComponent = DashboardComponent;
 //# sourceMappingURL=dashboard.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/dashboard/dashboard.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_component__ = __webpack_require__("./ui-app/js/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_router_can_activate_service__ = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var shared_module_1 = __webpack_require__("./ui-app/js/shared/shared.module.ts");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var dashboard_component_1 = __webpack_require__("./ui-app/js/dashboard/dashboard.component.ts");
+var router_can_activate_service_1 = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
 var ROUTES = [
     {
         path: 'dashboard',
-        component: __WEBPACK_IMPORTED_MODULE_3__dashboard_component__["a" /* DashboardComponent */],
+        component: dashboard_component_1.DashboardComponent,
         data: { breadcrumb: 'Dashboard', title: 'Dashboard' },
-        canActivate: [__WEBPACK_IMPORTED_MODULE_4__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
-        canActivateChild: [__WEBPACK_IMPORTED_MODULE_4__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
+        canActivate: [router_can_activate_service_1.RounterCanActivateService],
+        canActivateChild: [router_can_activate_service_1.RounterCanActivateService],
     }
 ];
 var DashboardModule = (function () {
@@ -226,24 +227,24 @@ var DashboardModule = (function () {
     return DashboardModule;
 }());
 DashboardModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+    core_1.NgModule({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__shared_shared_module__["a" /* SharedModule */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["e" /* RouterModule */].forRoot(ROUTES)
+            shared_module_1.SharedModule,
+            router_1.RouterModule.forRoot(ROUTES)
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_3__dashboard_component__["a" /* DashboardComponent */]
+            dashboard_component_1.DashboardComponent
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_3__dashboard_component__["a" /* DashboardComponent */]
+            dashboard_component_1.DashboardComponent
         ],
         entryComponents: [
-            __WEBPACK_IMPORTED_MODULE_3__dashboard_component__["a" /* DashboardComponent */]
+            dashboard_component_1.DashboardComponent
         ],
         providers: []
     })
 ], DashboardModule);
-
+exports.DashboardModule = DashboardModule;
 //# sourceMappingURL=dashboard.module.js.map
 
 /***/ }),
@@ -256,27 +257,29 @@ module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-head
 /***/ }),
 
 /***/ "./ui-app/js/hotel/hotel-index.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelIndexComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services__ = __webpack_require__("./ui-app/js/shared/services/index.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_animations_slide__ = __webpack_require__("./ui-app/js/shared/animations/slide.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var services_1 = __webpack_require__("./ui-app/js/shared/services/index.ts");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var slide_1 = __webpack_require__("./ui-app/js/shared/animations/slide.ts");
 var HotelIndexComponent = (function () {
     function HotelIndexComponent(hotelService, route) {
         this.hotelService = hotelService;
@@ -295,42 +298,43 @@ var HotelIndexComponent = (function () {
     return HotelIndexComponent;
 }());
 HotelIndexComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'hotel-index',
         template: __webpack_require__("./ui-app/js/hotel/hotel-index.component.pug"),
-        animations: [__WEBPACK_IMPORTED_MODULE_3__shared_animations_slide__["a" /* slideInDown */]]
+        animations: [slide_1.slideInDown]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services__["a" /* HotelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services__["a" /* HotelService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [services_1.HotelService,
+        router_1.ActivatedRoute])
 ], HotelIndexComponent);
-
-var _a, _b;
+exports.HotelIndexComponent = HotelIndexComponent;
 //# sourceMappingURL=hotel-index.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/hotel/hotel-resolve.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelResolveService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__("./node_modules/rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services__ = __webpack_require__("./ui-app/js/shared/services/index.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var rxjs_1 = __webpack_require__("./node_modules/rxjs/Rx.js");
+var services_1 = __webpack_require__("./ui-app/js/shared/services/index.ts");
 var HotelResolveService = (function () {
     function HotelResolveService(service, router) {
         this.service = service;
@@ -342,17 +346,16 @@ var HotelResolveService = (function () {
         return this.service.get(id)
             .catch(function (e) {
             _this.router.navigate(['/not-found']);
-            return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].of(false);
+            return rxjs_1.Observable.of(false);
         });
     };
     return HotelResolveService;
 }());
 HotelResolveService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services__["a" /* HotelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services__["a" /* HotelService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [services_1.HotelService, router_1.Router])
 ], HotelResolveService);
-
-var _a, _b;
+exports.HotelResolveService = HotelResolveService;
 //# sourceMappingURL=hotel-resolve.service.js.map
 
 /***/ }),
@@ -365,29 +368,30 @@ module.exports = "<div class=\"container-fluid m-t-xs\"><h2 class=\"section-head
 /***/ }),
 
 /***/ "./ui-app/js/hotel/hotel-view.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelViewComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__ = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_types_hotel__ = __webpack_require__("./ui-app/js/shared/types/hotel.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var forms_1 = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+var hotel_service_1 = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
+var hotel_1 = __webpack_require__("./ui-app/js/shared/types/hotel.ts");
 var HotelViewComponent = (function () {
     function HotelViewComponent(activatedRoute, hotelService, router) {
         this.activatedRoute = activatedRoute;
@@ -401,15 +405,15 @@ var HotelViewComponent = (function () {
             this.title = this.model.name;
         }
         else {
-            this.model = new __WEBPACK_IMPORTED_MODULE_4__shared_types_hotel__["a" /* Hotel */];
+            this.model = new hotel_1.Hotel;
             this.title = routeSnapshot.data.breadcrumb;
         }
         this.id = routeSnapshot.params.id;
-        this.form = new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["b" /* FormGroup */]({
-            id: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.id),
-            name: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.name),
-            address: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.address),
-            postCode: new __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormControl */](this.model.postCode)
+        this.form = new forms_1.FormGroup({
+            id: new forms_1.FormControl(this.model.id),
+            name: new forms_1.FormControl(this.model.name),
+            address: new forms_1.FormControl(this.model.address),
+            postCode: new forms_1.FormControl(this.model.postCode)
         });
     };
     HotelViewComponent.prototype.onSubmit = function () {
@@ -435,91 +439,92 @@ var HotelViewComponent = (function () {
     return HotelViewComponent;
 }());
 HotelViewComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'hotel-view',
         template: __webpack_require__("./ui-app/js/hotel/hotel-view.component.pug"),
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__["a" /* HotelService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_hotel_service__["a" /* HotelService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        hotel_service_1.HotelService,
+        router_1.Router])
 ], HotelViewComponent);
-
-var _a, _b, _c;
+exports.HotelViewComponent = HotelViewComponent;
 //# sourceMappingURL=hotel-view.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/hotel/hotel.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var HotelComponent = (function () {
     function HotelComponent() {
     }
     return HotelComponent;
 }());
 HotelComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'hotel',
         template: "\n\t\t<router-outlet></router-outlet>\n\t",
     })
 ], HotelComponent);
-
+exports.HotelComponent = HotelComponent;
 //# sourceMappingURL=hotel.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/hotel/hotel.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__hotel_component__ = __webpack_require__("./ui-app/js/hotel/hotel.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__ = __webpack_require__("./ui-app/js/hotel/hotel-index.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__ = __webpack_require__("./ui-app/js/hotel/hotel-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__ = __webpack_require__("./ui-app/js/hotel/hotel-resolve.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__ = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var forms_1 = __webpack_require__("./node_modules/@angular/forms/@angular/forms.es5.js");
+var hotel_component_1 = __webpack_require__("./ui-app/js/hotel/hotel.component.ts");
+var hotel_index_component_1 = __webpack_require__("./ui-app/js/hotel/hotel-index.component.ts");
+var hotel_view_component_1 = __webpack_require__("./ui-app/js/hotel/hotel-view.component.ts");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var shared_module_1 = __webpack_require__("./ui-app/js/shared/shared.module.ts");
+var hotel_resolve_service_1 = __webpack_require__("./ui-app/js/hotel/hotel-resolve.service.ts");
+var router_can_activate_service_1 = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
 var ROUTES = [
     {
         path: 'hotel',
-        component: __WEBPACK_IMPORTED_MODULE_2__hotel_component__["a" /* HotelComponent */],
+        component: hotel_component_1.HotelComponent,
         data: { breadcrumb: 'Hotel', title: 'Hotel' },
-        canActivate: [__WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
-        canActivateChild: [__WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */]],
+        canActivate: [router_can_activate_service_1.RounterCanActivateService],
+        canActivateChild: [router_can_activate_service_1.RounterCanActivateService],
         children: [
-            { path: '', component: __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__["a" /* HotelIndexComponent */], data: { breadcrumb: 'Hotel list' } },
-            { path: 'add', component: __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__["a" /* HotelViewComponent */], data: { breadcrumb: 'Add hotel' } },
+            { path: '', component: hotel_index_component_1.HotelIndexComponent, data: { breadcrumb: 'Hotel list' } },
+            { path: 'add', component: hotel_view_component_1.HotelViewComponent, data: { breadcrumb: 'Add hotel' } },
             {
                 path: ':id/edit',
-                component: __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__["a" /* HotelViewComponent */],
+                component: hotel_view_component_1.HotelViewComponent,
                 resolve: {
-                    model: __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__["a" /* HotelResolveService */]
+                    model: hotel_resolve_service_1.HotelResolveService
                 }
             }
         ]
@@ -531,56 +536,59 @@ var HotelModule = (function () {
     return HotelModule;
 }());
 HotelModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+    core_1.NgModule({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_6__shared_shared_module__["a" /* SharedModule */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_router__["e" /* RouterModule */].forRoot(ROUTES),
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* ReactiveFormsModule */]
+            shared_module_1.SharedModule,
+            router_1.RouterModule.forRoot(ROUTES),
+            forms_1.FormsModule,
+            forms_1.ReactiveFormsModule
         ],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_5__angular_router__["e" /* RouterModule */]
+            router_1.RouterModule
         ],
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__hotel_component__["a" /* HotelComponent */],
-            __WEBPACK_IMPORTED_MODULE_3__hotel_index_component__["a" /* HotelIndexComponent */],
-            __WEBPACK_IMPORTED_MODULE_4__hotel_view_component__["a" /* HotelViewComponent */]
+            hotel_component_1.HotelComponent,
+            hotel_index_component_1.HotelIndexComponent,
+            hotel_view_component_1.HotelViewComponent
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_8__shared_services_router_can_activate_service__["a" /* RounterCanActivateService */],
-            __WEBPACK_IMPORTED_MODULE_7__hotel_resolve_service__["a" /* HotelResolveService */]
+            router_can_activate_service_1.RounterCanActivateService,
+            hotel_resolve_service_1.HotelResolveService
         ]
     })
 ], HotelModule);
-
+exports.HotelModule = HotelModule;
 //# sourceMappingURL=hotel.module.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/layout/breadcrumb.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BreadcrumbService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs__ = __webpack_require__("./node_modules/rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var rxjs_1 = __webpack_require__("./node_modules/rxjs/Rx.js");
 var BreadcrumbService = (function () {
     function BreadcrumbService() {
         this.prefixedBreadcrumbs = [];
         this.breadcrumbs = [];
-        this.breadcrumbsSource = new __WEBPACK_IMPORTED_MODULE_1_rxjs__["Subject"]();
+        this.breadcrumbsSource = new rxjs_1.Subject();
         this.breadcrumbsChanged$ = this.breadcrumbsSource.asObservable();
         if (localStorage.getItem('prefixedBreadcrumbs') != null) {
             this.prefixedBreadcrumbs = JSON.parse(localStorage.getItem('prefixedBreadcrumbs'));
@@ -620,49 +628,49 @@ var BreadcrumbService = (function () {
     return BreadcrumbService;
 }());
 BreadcrumbService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
 ], BreadcrumbService);
-
+exports.BreadcrumbService = BreadcrumbService;
 //# sourceMappingURL=breadcrumb.service.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/layout/layout.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LayoutModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_shared_module__ = __webpack_require__("./ui-app/js/shared/shared.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sidebar_left_component__ = __webpack_require__("./ui-app/js/layout/sidebar-left.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__topbar_component__ = __webpack_require__("./ui-app/js/layout/topbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__breadcrumb_service__ = __webpack_require__("./ui-app/js/layout/breadcrumb.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var shared_module_1 = __webpack_require__("./ui-app/js/shared/shared.module.ts");
+var sidebar_left_component_1 = __webpack_require__("./ui-app/js/layout/sidebar-left.component.ts");
+var topbar_component_1 = __webpack_require__("./ui-app/js/layout/topbar.component.ts");
+var breadcrumb_service_1 = __webpack_require__("./ui-app/js/layout/breadcrumb.service.ts");
 var LayoutModule = (function () {
     function LayoutModule() {
     }
     return LayoutModule;
 }());
 LayoutModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
-        imports: [__WEBPACK_IMPORTED_MODULE_1__shared_shared_module__["a" /* SharedModule */]],
-        declarations: [__WEBPACK_IMPORTED_MODULE_3__topbar_component__["a" /* TopbarComponent */], __WEBPACK_IMPORTED_MODULE_2__sidebar_left_component__["a" /* SidebarLeftComponent */]],
-        exports: [__WEBPACK_IMPORTED_MODULE_3__topbar_component__["a" /* TopbarComponent */], __WEBPACK_IMPORTED_MODULE_2__sidebar_left_component__["a" /* SidebarLeftComponent */]],
-        providers: [__WEBPACK_IMPORTED_MODULE_4__breadcrumb_service__["a" /* BreadcrumbService */]]
+    core_1.NgModule({
+        imports: [shared_module_1.SharedModule],
+        declarations: [topbar_component_1.TopbarComponent, sidebar_left_component_1.SidebarLeftComponent],
+        exports: [topbar_component_1.TopbarComponent, sidebar_left_component_1.SidebarLeftComponent],
+        providers: [breadcrumb_service_1.BreadcrumbService]
     })
 ], LayoutModule);
-
+exports.LayoutModule = LayoutModule;
 //# sourceMappingURL=layout.module.js.map
 
 /***/ }),
@@ -682,26 +690,30 @@ module.exports = "<a class=\"rb-brand\" href=\"main\" target=\"_self\"><img clas
 /***/ }),
 
 /***/ "./ui-app/js/layout/sidebar-left.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SidebarLeftComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
 var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
+    return function (target, key) { decorator(target, key, paramIndex); };
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var platform_browser_1 = __webpack_require__("./node_modules/@angular/platform-browser/@angular/platform-browser.es5.js");
 // import { RootScope, SidebarLeftService } from 'reboot-ui2';
 // import { Authentication } from 'shared/services';
 // let Ps = require('perfect-scrollbar');
@@ -721,16 +733,16 @@ var SidebarLeftComponent = (function () {
     return SidebarLeftComponent;
 }());
 SidebarLeftComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'sidebar-left',
         template: __webpack_require__("./ui-app/js/layout/sidebar-left.component.pug"),
         styles: [__webpack_require__("./ui-app/js/layout/sidebar-left.component.less")]
     }),
-    __param(1, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Inject */])(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DOCUMENT */])),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* ElementRef */]) === "function" && _a || Object, Object])
+    __param(1, core_1.Inject(platform_browser_1.DOCUMENT)),
+    __metadata("design:paramtypes", [core_1.ElementRef,
+        Document])
 ], SidebarLeftComponent);
-
-var _a;
+exports.SidebarLeftComponent = SidebarLeftComponent;
 //# sourceMappingURL=sidebar-left.component.js.map
 
 /***/ }),
@@ -750,25 +762,28 @@ module.exports = "<ul class=\"breadcrumb\" *ngIf=\"breadcrumbs &amp;&amp; breadc
 /***/ }),
 
 /***/ "./ui-app/js/layout/topbar.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopbarComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__ = __webpack_require__("./ui-app/js/layout/breadcrumb.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var breadcrumb_service_1 = __webpack_require__("./ui-app/js/layout/breadcrumb.service.ts");
 // import { RootScope} from 'reboot-ui2';
 // import { Authentication } from 'shared/services';
 var TopbarComponent = (function () {
@@ -791,7 +806,7 @@ var TopbarComponent = (function () {
         // const ROUTE_PARAM_BREADCRUMB: string = 'breadcrumb';
         var PREFIX_BREADCRUMB = 'prefixBreadcrumb';
         //subscribe to the NavigationEnd event
-        this.router.events.filter(function (event) { return event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* NavigationEnd */]; }).subscribe(function (event) {
+        this.router.events.filter(function (event) { return event instanceof router_1.NavigationEnd; }).subscribe(function (event) {
             //reset currentBreadcrumbs
             _this.currentBreadcrumbs = [];
             //get the root of the current route
@@ -808,7 +823,7 @@ var TopbarComponent = (function () {
                     // Set currentRoute to this route
                     currentRoute = route;
                     // Verify this is the primary route
-                    if (route.outlet !== __WEBPACK_IMPORTED_MODULE_1__angular_router__["c" /* PRIMARY_OUTLET */]) {
+                    if (route.outlet !== router_1.PRIMARY_OUTLET) {
                         return;
                     }
                     /*
@@ -860,78 +875,86 @@ var TopbarComponent = (function () {
     return TopbarComponent;
 }());
 TopbarComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'topbar',
         template: __webpack_require__("./ui-app/js/layout/topbar.component.pug"),
         styles: [__webpack_require__("./ui-app/js/layout/topbar.component.less")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__breadcrumb_service__["a" /* BreadcrumbService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [breadcrumb_service_1.BreadcrumbService,
+        router_1.ActivatedRoute,
+        router_1.Router
+        // private rootScope: RootScope,
+        // private authentication: Authentication
+    ])
 ], TopbarComponent);
-
-var _a, _b, _c;
+exports.TopbarComponent = TopbarComponent;
 //# sourceMappingURL=topbar.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/page-not-found.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PageNotFoundComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
 var PageNotFoundComponent = (function () {
     function PageNotFoundComponent() {
     }
     return PageNotFoundComponent;
 }());
 PageNotFoundComponent = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+    core_1.Component({
         selector: 'page-not-found',
         template: "\n\t\t<h1 class=\"text-center\">404</h1><h3 class=\"text-center\">PAGE NOT FOUND</h3>\n\t"
     }),
     __metadata("design:paramtypes", [])
 ], PageNotFoundComponent);
-
+exports.PageNotFoundComponent = PageNotFoundComponent;
 //# sourceMappingURL=page-not-found.component.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/animations/slide.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return slideInDown; });
-/* unused harmony export expand */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_animations__ = __webpack_require__("./node_modules/@angular/animations/@angular/animations.es5.js");
 
-var slideInDown = Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('slideInDown', [
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["g" /* state */])('in', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ transform: 'translate3d(0, 0, 0)', opacity: '1' })),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('void => *', [
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ transform: 'translate3d(0, -20px, 0)', opacity: '0' }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s ease-in')
+Object.defineProperty(exports, "__esModule", { value: true });
+var animations_1 = __webpack_require__("./node_modules/@angular/animations/@angular/animations.es5.js");
+exports.slideInDown = animations_1.trigger('slideInDown', [
+    animations_1.state('in', animations_1.style({ transform: 'translate3d(0, 0, 0)', opacity: '1' })),
+    animations_1.transition('void => *', [
+        animations_1.style({ transform: 'translate3d(0, -20px, 0)', opacity: '0' }),
+        animations_1.animate('0.2s ease-in')
     ]),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('* => void', [
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s ease-in', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ transform: 'translate3d(0, -20px, 0)', opacity: '0' }))
+    animations_1.transition('* => void', [
+        animations_1.animate('0.2s ease-in', animations_1.style({ transform: 'translate3d(0, -20px, 0)', opacity: '0' }))
     ])
 ]);
-var expand = Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* trigger */])('expand', [
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('void => *', [
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ height: '0', overflow: 'hidden' }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s ease-in', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ height: '*' }))
+exports.expand = animations_1.trigger('expand', [
+    animations_1.transition('void => *', [
+        animations_1.style({ height: '0', overflow: 'hidden' }),
+        animations_1.animate('0.2s ease-in', animations_1.style({ height: '*' }))
     ]),
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["i" /* transition */])('* => void', [
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ overflow: 'hidden' }),
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["e" /* animate */])('0.2s ease-in', Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["h" /* style */])({ height: '0' }))
+    animations_1.transition('* => void', [
+        animations_1.style({ overflow: 'hidden' }),
+        animations_1.animate('0.2s ease-in', animations_1.style({ height: '0' }))
     ])
 ]);
 //# sourceMappingURL=slide.js.map
@@ -939,26 +962,28 @@ var expand = Object(__WEBPACK_IMPORTED_MODULE_0__angular_animations__["j" /* tri
 /***/ }),
 
 /***/ "./ui-app/js/shared/services/hotel.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HotelService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__("./node_modules/rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var http_1 = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+var rxjs_1 = __webpack_require__("./node_modules/rxjs/Rx.js");
 var HotelService = (function () {
     function HotelService(http) {
         this.http = http;
@@ -966,67 +991,70 @@ var HotelService = (function () {
     HotelService.prototype.list = function () {
         return this.http.get('/api/scm/v1/hotels')
             .map(function (r) { return r.json(); })
-            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
+            .catch(function (r) { return rxjs_1.Observable.throw(r.json()); });
     };
     HotelService.prototype.get = function (id) {
         return this.http.get("api/scm/v1/hotels/" + id)
             .map(function (r) { return r.json(); })
-            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
+            .catch(function (r) { return rxjs_1.Observable.throw(r.json()); });
     };
     HotelService.prototype.save = function (params) {
         return this.http.post('api/scm/v1/hotels', params)
             .map(function (r) { return r.json(); })
-            .catch(function (r) { return __WEBPACK_IMPORTED_MODULE_2_rxjs__["Observable"].throw(r.json()); });
+            .catch(function (r) { return rxjs_1.Observable.throw(r.json()); });
     };
     return HotelService;
 }());
 HotelService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
 ], HotelService);
-
-var _a;
+exports.HotelService = HotelService;
 //# sourceMappingURL=hotel.service.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/services/index.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hotel_service__ = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__hotel_service__["a"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__router_can_activate_service__ = __webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts");
-/* unused harmony namespace reexport */
 
-
+function __export(m) {
+    for (var p in m)
+        if (!exports.hasOwnProperty(p))
+            exports[p] = m[p];
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+__export(__webpack_require__("./ui-app/js/shared/services/hotel.service.ts"));
+__export(__webpack_require__("./ui-app/js/shared/services/router-can-activate.service.ts"));
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/services/router-can-activate.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RounterCanActivateService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs__ = __webpack_require__("./node_modules/rxjs/Rx.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+        return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var http_1 = __webpack_require__("./node_modules/@angular/http/@angular/http.es5.js");
+var rxjs_1 = __webpack_require__("./node_modules/rxjs/Rx.js");
 var RounterCanActivateService = (function () {
     function RounterCanActivateService(http, router) {
         this.http = http;
@@ -1042,134 +1070,134 @@ var RounterCanActivateService = (function () {
         var _this = this;
         return this.http.head(state.url).map(function (r) { return true; }).catch(function () {
             _this.router.navigate(['/not-found']);
-            return __WEBPACK_IMPORTED_MODULE_3_rxjs__["Observable"].throw(false);
+            return rxjs_1.Observable.throw(false);
         })
             .toPromise();
     };
     return RounterCanActivateService;
 }());
 RounterCanActivateService = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["d" /* Router */]) === "function" && _b || Object])
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http, router_1.Router])
 ], RounterCanActivateService);
-
-var _a, _b;
+exports.RounterCanActivateService = RounterCanActivateService;
 //# sourceMappingURL=router-can-activate.service.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/services/shared-services.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedServicesModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hotel_service__ = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var hotel_service_1 = __webpack_require__("./ui-app/js/shared/services/hotel.service.ts");
 var SharedServicesModule = (function () {
     function SharedServicesModule() {
     }
     return SharedServicesModule;
 }());
 SharedServicesModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+    core_1.NgModule({
         imports: [],
         exports: [],
         declarations: [],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_1__hotel_service__["a" /* HotelService */]
+            hotel_service_1.HotelService
         ]
     })
 ], SharedServicesModule);
-
+exports.SharedServicesModule = SharedServicesModule;
 //# sourceMappingURL=shared-services.module.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/shared.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SharedModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__ = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_shared_services_module__ = __webpack_require__("./ui-app/js/shared/services/shared-services.module.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+        r = Reflect.decorate(decorators, target, key, desc);
+    else
+        for (var i = decorators.length - 1; i >= 0; i--)
+            if (d = decorators[i])
+                r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var router_1 = __webpack_require__("./node_modules/@angular/router/@angular/router.es5.js");
+var common_1 = __webpack_require__("./node_modules/@angular/common/@angular/common.es5.js");
+var ng_bootstrap_1 = __webpack_require__("./node_modules/@ng-bootstrap/ng-bootstrap/index.js");
 // import { RebootUIModule } from 'reboot-ui2';
-
+var shared_services_module_1 = __webpack_require__("./ui-app/js/shared/services/shared-services.module.ts");
 var SharedModule = (function () {
     function SharedModule() {
     }
     return SharedModule;
 }());
 SharedModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgModule */])({
+    core_1.NgModule({
         declarations: [],
         exports: [
-            __WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_3__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["e" /* RouterModule */],
+            common_1.CommonModule,
+            ng_bootstrap_1.NgbModule,
+            router_1.RouterModule,
             // RebootUIModule,
-            __WEBPACK_IMPORTED_MODULE_4__services_shared_services_module__["a" /* SharedServicesModule */],
+            shared_services_module_1.SharedServicesModule,
         ],
         providers: []
     })
 ], SharedModule);
-
+exports.SharedModule = SharedModule;
 //# sourceMappingURL=shared.module.js.map
 
 /***/ }),
 
 /***/ "./ui-app/js/shared/types/hotel.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Hotel; });
+
+Object.defineProperty(exports, "__esModule", { value: true });
 var Hotel = (function () {
     function Hotel() {
     }
     return Hotel;
 }());
-
+exports.Hotel = Hotel;
 //# sourceMappingURL=hotel.js.map
 
 /***/ }),
 
 /***/ "./ui-app/main.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__js_app_module__ = __webpack_require__("./ui-app/js/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("./ui-app/environments/environment.ts");
 
-
-
-
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("./node_modules/@angular/core/@angular/core.es5.js");
+var platform_browser_dynamic_1 = __webpack_require__("./node_modules/@angular/platform-browser-dynamic/@angular/platform-browser-dynamic.es5.js");
+var app_module_1 = __webpack_require__("./ui-app/js/app.module.ts");
+var environment_1 = __webpack_require__("./ui-app/environments/environment.ts");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__js_app_module__["a" /* AppModule */]);
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule);
 //# sourceMappingURL=main.js.map
 
 /***/ }),

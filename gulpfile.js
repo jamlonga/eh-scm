@@ -11,10 +11,11 @@ var webpack = require('webpack-stream');
 var gutil = require('gulp-util');
 
 const SRC_PATH = './ui-app';
-const DEST_PATH = './src/main/resources/public'
+const SRC_DEST_PATH = './src/main/resources/public'
+const BUILD_DEST_PATH = './build/resources/main/public'
 
 const requiredPackages = {
-	'reboot-ui': '2.0.0-a-61'
+	'reboot-ui': '2.0.0-b-4'
 };
 
 /**
@@ -62,7 +63,8 @@ gulp.task('build', ['check'], function() {
 	return gulp.src(`${SRC_PATH}/entry.js`)
 	.pipe(plumber())
 	.pipe(webpack(config))
-	.pipe(gulp.dest(DEST_PATH));
+	.pipe(gulp.dest(SRC_DEST_PATH))
+	.pipe(gulp.dest(BUILD_DEST_PATH));
 });
 
 gulp.task('serve', [
@@ -74,7 +76,9 @@ gulp.task('serve', [
 	gulp.src(`${SRC_PATH}/entry.js`)
 		.pipe(plumber())
 		.pipe(webpack(config))
-		.pipe(gulp.dest(DEST_PATH));
+		.pipe(gulp.dest(SRC_DEST_PATH))
+		.pipe(gulp.dest(BUILD_DEST_PATH));
+
 	// watch('./src/main/resources/public/**/*.*', reload);
 	watch('./build/resources/main/public/**/*.*', reload);
 });

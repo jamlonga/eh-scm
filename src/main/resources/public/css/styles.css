@@ -1729,7 +1729,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.active:hover > td,
 .table-hover > tbody > tr:hover > .active,
 .table-hover > tbody > tr.active:hover > th {
-  background-color: #e0e6eb;
+  background-color: #e7ebef;
 }
 .table > thead > tr > td.success,
 .table > tbody > tr > td.success,
@@ -1750,7 +1750,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.success:hover > td,
 .table-hover > tbody > tr:hover > .success,
 .table-hover > tbody > tr.success:hover > th {
-  background-color: #52b655;
+  background-color: #59b95c;
 }
 .table > thead > tr > td.info,
 .table > tbody > tr > td.info,
@@ -1764,14 +1764,14 @@ table th[class*="col-"] {
 .table > thead > tr.info > th,
 .table > tbody > tr.info > th,
 .table > tfoot > tr.info > th {
-  background-color: #4691ce;
+  background-color: #fffce6;
 }
 .table-hover > tbody > tr > td.info:hover,
 .table-hover > tbody > tr > th.info:hover,
 .table-hover > tbody > tr.info:hover > td,
 .table-hover > tbody > tr:hover > .info,
 .table-hover > tbody > tr.info:hover > th {
-  background-color: #3485c6;
+  background-color: #fffad7;
 }
 .table > thead > tr > td.warning,
 .table > tbody > tr > td.warning,
@@ -1792,7 +1792,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.warning:hover > td,
 .table-hover > tbody > tr:hover > .warning,
 .table-hover > tbody > tr.warning:hover > th {
-  background-color: #fcaf3c;
+  background-color: #fcb346;
 }
 .table > thead > tr > td.danger,
 .table > tbody > tr > td.danger,
@@ -1813,7 +1813,7 @@ table th[class*="col-"] {
 .table-hover > tbody > tr.danger:hover > td,
 .table-hover > tbody > tr:hover > .danger,
 .table-hover > tbody > tr.danger:hover > th {
-  background-color: #f14437;
+  background-color: #f24d41;
 }
 .table-responsive {
   overflow-x: auto;
@@ -6058,6 +6058,7 @@ main {
 main > .content {
   position: relative;
   flex: 1 1 auto;
+  transition: all 0.5s;
 }
 main ui-view {
   position: absolute;
@@ -6102,6 +6103,16 @@ body.rb-layout-main .container {
   body.rb-sidebar-left-minimized .container {
     width: 1120px;
   }
+}
+body.sidebar-right-enable .content {
+  margin-right: 40px;
+  overflow: auto;
+}
+body.sidebar-right-open .content {
+  margin-right: 360px;
+}
+body.sidebar-right-open .sidebar-right-toggler {
+  display: none;
 }
 body.rb-layout-external {
   background: #EE352A;
